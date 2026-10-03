@@ -1,0 +1,12 @@
+PALETA LYRA WILDLIFE · kit v2.0 · octubre 2026
+(fuente: Lyra Wildlife - Logo/Kit Lyra Wildlife v2/LEEME.txt)
+
+Azul           #788990   principal: fondos, avatares, piezas grandes
+Azul profundo  #3F525A   logotipo sobre claro, texto, fondos oscuros
+Pérola         #F0EDE4   fondo claro base; logotipo sobre oscuro
+Beige rosa     #E3D6C5   segundo fondo claro
+Terracota      #974315   acento, poca superficie
+Verde claro    #8D957E   mapas e ilustración; no para texto
+
+Paleta anterior (la que usa el sitio publicado al 01/10/2026):
+Tinta #1A1A18 · Hueso #F1F0EA · Hueso profunda #E5E3DB · Ocre #F4DFA0 · Oro #9A7016

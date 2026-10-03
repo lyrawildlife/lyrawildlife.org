@@ -1,0 +1,340 @@
+/* ==========================================================================
+   LYRA WILDLIFE · estilos del sitio
+   Identidad visual v2 (octubre 2026). Los colores viven en :root; el resto
+   del sitio solo usa las variables. Para cambiar un color, cambialo acá.
+   ========================================================================== */
+
+:root{
+  /* Paleta v2 */
+  --perola:#F0EDE4;          /* fondo claro base */
+  --beige:#E3D6C5;           /* segundo fondo claro */
+  --azul:#788990;            /* principal: fondos de marca, piezas grandes (no para texto chico) */
+  --azul-profundo:#3F525A;   /* texto, logotipo sobre claro, fondos oscuros */
+  --terracota:#974315;       /* acento, poca superficie: enlaces, etiquetas */
+  --verde:#8D957E;           /* mapas e ilustración; no para texto */
+
+  /* Derivados para texto (contraste verificado sobre pérola, mínimo 4,5:1) */
+  --texto:var(--azul-profundo);
+  --texto-sec:#52626A;
+  --texto-terc:#58686F;
+  --linea:rgba(63,82,90,.16);
+
+  --u:8px;                   /* espaciado base 8 */
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Satoshi",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:light;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  overflow-x:hidden;
+  background:var(--perola);
+  color:var(--texto);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.6;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--beige);color:var(--azul-profundo)}
+
+.wrap{max-width:760px;margin:0 auto;padding:0 calc(var(--u)*3)}
+
+/* ---- Cabecera ------------------------------------------------------------ */
+header{padding:calc(var(--u)*4) 0 0}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:calc(var(--u)*2);flex-wrap:wrap}
+.marca{display:inline-block;color:var(--azul-profundo);border:0;line-height:0}
+.marca svg{height:40px;width:auto;display:block}   /* 40 px de alto = 157 px de ancho: rango de la versión reforzada */
+.langs{display:flex;gap:calc(var(--u)*1.5);font-size:13px}
+.langs button{
+  font-family:var(--sans);
+  font-size:13px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  background:none;
+  border:0;
+  padding:4px 0;
+  color:var(--texto-terc);
+  cursor:pointer;
+  border-bottom:2px solid transparent;
+}
+.langs button[aria-pressed="true"]{color:var(--azul-profundo);border-bottom-color:var(--azul)}
+.langs button:hover{color:var(--azul-profundo)}
+
+/* ---- Kicker de dos partes ------------------------------------------------ */
+.kicker{
+  display:flex;
+  align-items:center;
+  gap:calc(var(--u)*1.5);
+  flex-wrap:wrap;
+  margin:calc(var(--u)*9) 0 calc(var(--u)*3);
+  font-size:12px;
+}
+.pill{
+  background:var(--azul-profundo);
+  color:var(--perola);
+  padding:5px 10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:500;
+  font-size:11px;
+}
+.kicker .meta{color:var(--texto-terc);font-size:12px;letter-spacing:.04em}
+.kicker .meta a{color:inherit;border-bottom-color:var(--linea)}
+.kicker .meta a:hover{color:var(--terracota)}
+
+/* ---- Tipografía ---------------------------------------------------------- */
+h1{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(34px,5.4vw,52px);
+  line-height:1.1;
+  letter-spacing:-.015em;
+  margin:0 0 calc(var(--u)*3);
+  max-width:22ch;
+  text-wrap:balance;
+}
+h1.nombre{font-size:clamp(48px,9vw,92px);line-height:1;max-width:none}
+h2{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(24px,3.4vw,30px);
+  line-height:1.2;
+  letter-spacing:-.01em;
+  margin:0 0 calc(var(--u)*2);
+  text-wrap:balance;
+}
+h3{
+  font-family:var(--sans);
+  font-weight:700;
+  font-size:15px;
+  letter-spacing:.02em;
+  margin:0 0 calc(var(--u)*1);
+}
+.lead{
+  font-family:var(--serif);
+  font-size:clamp(20px,2.6vw,25px);
+  line-height:1.45;
+  font-weight:400;
+  margin:0 0 calc(var(--u)*3);
+  max-width:36ch;
+  text-wrap:balance;
+}
+p{margin:0 0 calc(var(--u)*2);max-width:64ch}
+strong{font-weight:700}
+a{color:var(--terracota);text-decoration:none;border-bottom:1px solid rgba(151,67,21,.35)}
+a:hover{border-bottom-color:var(--terracota)}
+ul{margin:0 0 calc(var(--u)*2);padding-left:1.2em;max-width:64ch}
+li{margin-bottom:calc(var(--u)*1)}
+
+section{padding:calc(var(--u)*8) 0;border-top:1px solid var(--linea)}
+section:first-of-type{border-top:0}
+.eyebrow{
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--texto-terc);
+  font-weight:500;
+  margin:0 0 calc(var(--u)*2);
+}
+
+/* ---- Bandas a sangre ----------------------------------------------------- */
+.banda{width:100vw;margin-left:calc(50% - 50vw)}
+.banda > .inner{max-width:760px;margin:0 auto;padding:0 calc(var(--u)*3)}
+.banda.beige{background:var(--beige)}
+.banda.beige section{border-top:0}
+.banda.beige + section{border-top:0}
+.banda.azul{background:var(--azul);color:var(--perola)}
+.banda.azul .pill{background:var(--azul-profundo);color:var(--perola)}
+
+/* Portada de programa: solo el nombre, grande, en pérola sobre azul. */
+.hero-programa{padding:calc(var(--u)*7) 0 calc(var(--u)*6)}
+.hero-programa .kicker{margin:0 0 calc(var(--u)*3)}
+.hero-programa h1{color:var(--perola);margin:0}
+
+/* ---- Foto a sangre -------------------------------------------------------- */
+.figure{
+  width:100vw;
+  margin:calc(var(--u)*6) 0 0 calc(50% - 50vw);
+  background:var(--beige);
+  aspect-ratio:2.35/1;
+  overflow:hidden;
+}
+.figure img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+
+/* ---- Listas de trabajo --------------------------------------------------- */
+.stack{display:grid;gap:calc(var(--u)*4);margin-top:calc(var(--u)*4)}
+.item{display:grid;grid-template-columns:auto 1fr;gap:calc(var(--u)*3);align-items:start}
+.num{font-family:var(--mono);font-size:12px;color:var(--texto-terc);padding-top:3px}
+.item p{margin:0;color:var(--texto-sec)}
+.item h3.serif{font-family:var(--serif);font-weight:400;font-size:22px;letter-spacing:-.01em;margin-bottom:calc(var(--u)*1)}
+
+/* ---- Portadas de programas (a sangre) ------------------------------------ */
+.programas{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  padding:calc(var(--u)*8) 0 0;
+  border-top:1px solid var(--linea);
+}
+.titulo-seccion{
+  text-align:center;
+  font-size:13px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--azul-profundo);
+  max-width:none;
+  margin:0 0 calc(var(--u)*4);
+}
+.cover{
+  position:relative;
+  display:block;
+  width:100%;
+  aspect-ratio:2.35/1;
+  overflow:hidden;
+  background:var(--azul-profundo);   /* se ve si falta la foto */
+  color:var(--perola);
+  border:0;
+  margin-bottom:var(--u);            /* filete claro entre portadas */
+}
+.cover:last-child{margin-bottom:0}
+.cover img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+  transition:transform 1.2s ease;
+}
+.cover:hover img{transform:scale(1.02)}
+.cover::after{                        /* velo suave a la izquierda para leer el texto */
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(63,82,90,.55) 0%,rgba(63,82,90,.2) 45%,rgba(63,82,90,0) 70%);
+}
+.cover-texto{
+  position:absolute;
+  left:7%;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:calc(var(--u)*1.5);
+  max-width:60%;
+  text-shadow:0 1px 12px rgba(63,82,90,.35);
+}
+.cover-sub{
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:500;
+  opacity:.9;
+}
+.cover-titulo{
+  font-family:var(--sans);
+  font-weight:400;
+  font-size:clamp(24px,3.4vw,42px);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  line-height:1.15;
+}
+.cover-btn{
+  display:inline-block;
+  margin-top:calc(var(--u)*1);
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-weight:500;
+  padding:7px 12px;
+  border:1px solid rgba(240,237,228,.85);
+  transition:background .25s ease,color .25s ease;
+}
+.cover:hover .cover-btn{background:var(--perola);color:var(--azul-profundo)}
+.programas + main > section:first-child{border-top:0}
+
+/* ---- Recuadro "lo esencial" ---------------------------------------------- */
+.esencial{
+  background:var(--beige);
+  padding:calc(var(--u)*4);
+  margin:calc(var(--u)*4) 0;
+}
+.esencial h3{margin-bottom:calc(var(--u)*2)}
+.esencial ul{margin:0;color:var(--azul-profundo)}
+.esencial li{margin-bottom:calc(var(--u)*1.25)}
+.esencial li:last-child{margin-bottom:0}
+
+/* ---- Botones ------------------------------------------------------------- */
+.acciones{display:flex;gap:calc(var(--u)*1.5);flex-wrap:wrap;margin-top:calc(var(--u)*3)}
+.btn{
+  display:inline-block;
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:14px;
+  letter-spacing:.02em;
+  line-height:1.2;
+  padding:12px 18px;
+  border:1px solid var(--azul-profundo);
+  color:var(--azul-profundo);
+  background:none;
+}
+.btn:hover{background:var(--beige);border-color:var(--azul-profundo)}
+.btn.primario{background:var(--azul-profundo);color:var(--perola)}
+.btn.primario:hover{background:var(--azul);border-color:var(--azul)}
+
+/* ---- Logos de aliados (se activa cuando haya logos) ---------------------- */
+.logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:calc(var(--u)*3);margin-top:calc(var(--u)*4);align-items:center}
+.logos img{width:100%;height:auto;display:block;filter:grayscale(1);opacity:.85}
+
+/* ---- Datos institucionales ----------------------------------------------- */
+dl{margin:calc(var(--u)*3) 0 0;display:grid;grid-template-columns:200px 1fr;gap:calc(var(--u)*1.5) calc(var(--u)*3)}
+dt{font-size:13px;color:var(--texto-terc);letter-spacing:.02em}
+dd{margin:0;font-size:15px}
+dd.code{font-family:var(--mono);font-size:13px;line-height:1.5}
+.autoridades{font-size:15px;color:var(--texto-sec);margin-top:calc(var(--u)*4)}
+.autoridades span{display:block}
+
+/* ---- Contacto ------------------------------------------------------------ */
+.mail{
+  font-family:var(--serif);
+  font-size:clamp(22px,3.4vw,30px);
+  border-bottom:2px solid var(--azul);
+  display:inline-block;
+  color:var(--azul-profundo);
+}
+.mail:hover{border-bottom-color:var(--terracota)}
+
+/* ---- Pie ----------------------------------------------------------------- */
+footer{
+  border-top:1px solid var(--linea);
+  padding:calc(var(--u)*5) 0 calc(var(--u)*8);
+  font-size:13px;
+  color:var(--texto-terc);
+}
+footer .row{display:flex;justify-content:space-between;gap:calc(var(--u)*2);flex-wrap:wrap}
+footer .stamp{font-family:var(--mono);font-size:12px}
+footer a{color:inherit;border-bottom-color:var(--linea)}
+footer a:hover{color:var(--terracota)}
+
+/* ---- Idiomas ------------------------------------------------------------- */
+[data-lang="es"] .en{display:none}
+[data-lang="en"] .es{display:none}
+
+@media (max-width:620px){
+  body{font-size:16px}
+  .marca svg{height:36px}
+  .figure{aspect-ratio:16/9;margin-top:calc(var(--u)*4)}
+  dl{grid-template-columns:1fr;gap:2px calc(var(--u)*2)}
+  dt{margin-top:calc(var(--u)*2)}
+  .item{grid-template-columns:1fr;gap:calc(var(--u)*1)}
+  .kicker{margin-top:calc(var(--u)*6)}
+  .esencial{padding:calc(var(--u)*3)}
+  .btn{width:100%;text-align:center}
+  .programas{padding-top:calc(var(--u)*6)}
+  .cover{aspect-ratio:4/3}
+  .cover-texto{left:calc(var(--u)*3);max-width:85%}
+  .cover::after{background:linear-gradient(90deg,rgba(63,82,90,.6) 0%,rgba(63,82,90,.25) 60%,rgba(63,82,90,.05) 100%)}
+}

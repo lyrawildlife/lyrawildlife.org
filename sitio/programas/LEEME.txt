@@ -1,0 +1,11 @@
+FOTOS DE LAS PORTADAS DE PROGRAMAS (home)
+
+Una foto horizontal por programa, con estos nombres exactos:
+
+  orca-explorer.jpg
+  mirada-natural.jpg
+
+Recomendado: 1920 x 817 px (2.35:1, la misma proporción que portada.jpg), JPEG calidad 80, menos de 400 KB.
+El texto va a la izquierda, sobre un velo azul suave: conviene que el motivo
+principal quede en el centro o a la derecha.
+Si falta una foto, la portada se muestra en azul profundo sin romperse.
