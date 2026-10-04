@@ -206,9 +206,7 @@ section:first-of-type{border-top:0}
   width:100%;height:100%;
   object-fit:cover;object-position:center;
   display:block;
-  transition:transform 1.2s ease;
 }
-.cover:hover img{transform:scale(1.02)}
 .cover::after{                        /* velo suave a la izquierda para leer el texto */
   content:"";
   position:absolute;inset:0;
