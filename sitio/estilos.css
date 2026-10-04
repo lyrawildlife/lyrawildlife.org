@@ -338,23 +338,24 @@ footer a:hover{color:var(--terracota)}
 .colecciones{
   width:min(100vw,var(--ancho));
   margin-left:calc(50% - min(50vw,var(--ancho)/2));
-  padding:calc(var(--u)*8) calc(var(--u)*3);
+  padding:calc(var(--u)*8) 0;
   border-top:1px solid var(--linea);
 }
+.colecciones .fila{padding:0 calc(var(--u)*3)}
 .colecciones + .wrap > main > section:first-child{border-top:1px solid var(--linea)}
+/* La cabecera (rótulo, título, intro y categorías) va en la misma columna que
+   el resto del texto del sitio; solo las tarjetas usan el bloque ancho. */
 .colecciones .cabecera{
-  display:grid;
-  grid-template-columns:minmax(220px,300px) 1fr;
-  gap:calc(var(--u)*4) calc(var(--u)*8);
-  align-items:end;
-  margin-bottom:calc(var(--u)*4);
+  max-width:var(--col);
+  margin:0 auto calc(var(--u)*4);
+  padding:0 calc(var(--u)*3);
 }
 .colecciones .cabecera h2{margin-bottom:calc(var(--u)*2)}
-.colecciones .cabecera p{color:var(--texto-sec);font-size:15px;max-width:30ch;margin:0}
-.colecciones .cabecera p.eyebrow{color:var(--texto-terc);font-size:11px;margin-bottom:calc(var(--u)*2)}
+.colecciones .cabecera p{margin:0 0 calc(var(--u)*2)}
+.colecciones .cabecera p.eyebrow{margin-bottom:calc(var(--u)*2)}
 
 /* Selector de categorías */
-.categorias{display:flex;flex-wrap:wrap;gap:calc(var(--u)*1);justify-self:start}
+.categorias{display:flex;flex-wrap:wrap;gap:calc(var(--u)*1);margin-top:calc(var(--u)*3)}
 .categorias button{
   font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.02em;
   padding:9px 14px;border-radius:999px;cursor:pointer;
@@ -424,7 +425,6 @@ footer a:hover{color:var(--terracota)}
 .formulario .btn{cursor:pointer}
 
 @media (max-width:900px){
-  .colecciones .cabecera{grid-template-columns:1fr}
   .fila{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--u)}
   .tarjeta{scroll-snap-align:start}
   .fila-vacia{grid-column:auto}
