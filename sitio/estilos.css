@@ -20,6 +20,8 @@
   --linea:rgba(63,82,90,.16);
 
   --u:8px;                   /* espaciado base 8 */
+  --col:760px;               /* columna de texto */
+  --ancho:1280px;            /* bloques anchos (fotos, portadas, bandas): a sangre hasta este ancho, después centrados */
   --serif:"Fraunces",Georgia,"Times New Roman",serif;
   --sans:"Satoshi",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
@@ -41,7 +43,7 @@ body{
 }
 ::selection{background:var(--beige);color:var(--azul-profundo)}
 
-.wrap{max-width:760px;margin:0 auto;padding:0 calc(var(--u)*3)}
+.wrap{max-width:var(--col);margin:0 auto;padding:0 calc(var(--u)*3)}
 
 /* ---- Cabecera ------------------------------------------------------------ */
 header{padding:calc(var(--u)*4) 0 0}
@@ -142,8 +144,8 @@ section:first-of-type{border-top:0}
 }
 
 /* ---- Bandas a sangre ----------------------------------------------------- */
-.banda{width:100vw;margin-left:calc(50% - 50vw)}
-.banda > .inner{max-width:760px;margin:0 auto;padding:0 calc(var(--u)*3)}
+.banda{width:min(100vw,var(--ancho));margin-left:calc(50% - min(50vw,var(--ancho)/2))}
+.banda > .inner{max-width:var(--col);margin:0 auto;padding:0 calc(var(--u)*3)}
 .banda.beige{background:var(--beige)}
 .banda.beige section{border-top:0}
 .banda.beige + section{border-top:0}
@@ -157,8 +159,8 @@ section:first-of-type{border-top:0}
 
 /* ---- Foto a sangre -------------------------------------------------------- */
 .figure{
-  width:100vw;
-  margin:calc(var(--u)*6) 0 0 calc(50% - 50vw);
+  width:min(100vw,var(--ancho));
+  margin:calc(var(--u)*6) 0 0 calc(50% - min(50vw,var(--ancho)/2));
   background:var(--beige);
   aspect-ratio:2.35/1;
   overflow:hidden;
@@ -174,8 +176,8 @@ section:first-of-type{border-top:0}
 
 /* ---- Portadas de programas (a sangre) ------------------------------------ */
 .programas{
-  width:100vw;
-  margin-left:calc(50% - 50vw);
+  width:min(100vw,var(--ancho));
+  margin-left:calc(50% - min(50vw,var(--ancho)/2));
   padding:calc(var(--u)*8) 0 0;
   border-top:1px solid var(--linea);
 }
@@ -323,6 +325,12 @@ footer a:hover{color:var(--terracota)}
 /* ---- Idiomas ------------------------------------------------------------- */
 [data-lang="es"] .en{display:none}
 [data-lang="en"] .es{display:none}
+
+@media (min-width:1600px){
+  :root{--col:820px}
+  body{font-size:18px}
+  .lead{max-width:38ch}
+}
 
 @media (max-width:620px){
   body{font-size:16px}
