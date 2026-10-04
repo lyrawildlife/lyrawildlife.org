@@ -26,6 +26,10 @@ Hosting: Netlify, plan gratuito. DNS en Namecheap. Online desde el 05/09/2026.
 - Claude edita en `sitio/` y deja el commit preparado. Kevin abre GitHub Desktop y aprieta "Push origin". Netlify, vinculado al repositorio, publica la rama `main` en un minuto.
 - Alternativa manual: app.netlify.com → Deploys → arrastrar la carpeta `sitio/`.
 
+## Nota sobre Netlify
+
+El plan gratuito solo publica commits firmados con un email de la cuenta de Netlify (kevinzaouali@gmail.com). Los commits de este repositorio se firman con ese email; no cambiarlo.
+
 ## Pendiente
 
 - Vincular el sitio de Netlify al repositorio de GitHub (publish directory: `sitio`).
