@@ -216,6 +216,7 @@ section:first-of-type{border-top:0}
 }
 .cover-texto{
   position:absolute;
+  pointer-events:none;
   left:7%;
   top:50%;
   transform:translateY(-50%);
@@ -242,9 +243,10 @@ section:first-of-type{border-top:0}
   text-transform:uppercase;
   line-height:1.15;
 }
+.cover-botones{pointer-events:auto;display:flex;gap:calc(var(--u)*1.5);flex-wrap:wrap;margin-top:calc(var(--u)*1)}
 .cover-btn{
   display:inline-block;
-  margin-top:calc(var(--u)*1);
+  color:var(--perola);
   font-size:10px;
   letter-spacing:.18em;
   text-transform:uppercase;
@@ -253,7 +255,7 @@ section:first-of-type{border-top:0}
   border:1px solid rgba(240,237,228,.85);
   transition:background .25s ease,color .25s ease;
 }
-.cover:hover .cover-btn{background:var(--perola);color:var(--azul-profundo)}
+.cover-btn:hover{background:var(--perola);color:var(--azul-profundo);border-color:var(--perola)}
 .programas + main > section:first-child{border-top:0}
 
 /* ---- Recuadro "lo esencial" ---------------------------------------------- */

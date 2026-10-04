@@ -135,32 +135,41 @@
      Una portada por programa. Cada portada necesita una foto horizontal en
      programas/<nombre>.jpg + .webp (2560 × 1089, 2.35:1). Si la foto falta,
      la portada se muestra sobre azul profundo sin romperse.
-     Para agregar un programa: copiá un bloque <a class="cover"> entero. -->
+     Para agregar un programa: copiá un bloque <article class="cover"> entero.
+     Cada portada puede tener uno o más botones dentro de .cover-botones. -->
 <section id="programas" class="programas">
   <p class="titulo-seccion es">Nuestros programas</p>
   <p class="titulo-seccion en">Our programmes</p>
 
-  <a class="cover" href="https://orcaexplorer.com" rel="noopener">
+  <article class="cover">
     <picture><source srcset="programas/orca-explorer.webp" type="image/webp"><img src="programas/orca-explorer.jpg" alt="" width="2560" height="1089" onerror="this.closest('picture').remove()"></picture>
-    <span class="cover-texto">
+    <div class="cover-texto">
       <span class="cover-sub es">Plataforma de ciencia ciudadana y conocimiento colaborativo</span>
       <span class="cover-sub en">A platform for citizen science and collaborative knowledge</span>
       <span class="cover-titulo">Orca Explorer</span>
-      <span class="cover-btn es">Conocer</span>
-      <span class="cover-btn en">Discover</span>
-    </span>
-  </a>
+      <span class="cover-botones">
+        <!-- Cuando exista la página propia de Orca Explorer, activá este botón:
+        <a class="cover-btn es" href="orca-explorer/">Conocer</a>
+        <a class="cover-btn en" href="orca-explorer/">Discover</a>
+        -->
+        <a class="cover-btn es" href="https://orcaexplorer.com" rel="noopener">Ir a la plataforma</a>
+        <a class="cover-btn en" href="https://orcaexplorer.com" rel="noopener">Go to the platform</a>
+      </span>
+    </div>
+  </article>
 
-  <a class="cover" href="mirada-natural/">
+  <article class="cover">
     <picture><source srcset="programas/mirada-natural.webp" type="image/webp"><img src="programas/mirada-natural.jpg" alt="" width="2560" height="1089" onerror="this.closest('picture').remove()"></picture>
-    <span class="cover-texto">
+    <div class="cover-texto">
       <span class="cover-sub es">Banco de Imágenes de la Naturaleza</span>
       <span class="cover-sub en">Nature Image Bank</span>
       <span class="cover-titulo">Mirada Natural</span>
-      <span class="cover-btn es">Conocer</span>
-      <span class="cover-btn en">Discover</span>
-    </span>
-  </a>
+      <span class="cover-botones">
+        <a class="cover-btn es" href="mirada-natural/">Conocer</a>
+        <a class="cover-btn en" href="mirada-natural/">Discover</a>
+      </span>
+    </div>
+  </article>
 </section>
 
 <div class="wrap">
