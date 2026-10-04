@@ -28,7 +28,7 @@ Hosting: Netlify, plan gratuito. DNS en Namecheap. Online desde el 05/09/2026.
 
 ## Nota sobre Netlify
 
-El plan gratuito solo publica commits firmados con un email de la cuenta de Netlify (kevinzaouali@gmail.com). Los commits de este repositorio se firman con ese email; no cambiarlo.
+El plan gratuito bloquea los deploys de repositorios privados cuando quien hace el push (la cuenta de GitHub lyrawildlife) no es miembro del equipo de Netlify. Por eso el repositorio es público (03/10/2026). No volver a hacerlo privado sin cambiar el plan.
 
 ## Pendiente
 
