@@ -115,25 +115,24 @@
   </section>
 
   <!-- ===================================================== COLECCIONES ===
-       Las colecciones del banco, por categoría. Cada <article class="tarjeta">
-       es una colección: foto vertical 2:3 en mirada-natural/colecciones/
-       (800 × 1200 px), nombre en la pastilla, descripción en .detalle.
-       Si una colección todavía no tiene foto, usá class="tarjeta sin-foto azul"
-       (o verde, o profundo) en vez del <img>.
+       Las colecciones del banco, por categoría, de a una por vez con flechas.
+       Cada <article class="coleccion"> es una colección: ficha (título,
+       descripción, línea de datos) + foto horizontal 2,35:1 (2560 × 1089 px,
+       en mirada-natural/colecciones/). La línea de datos lleva lugar y, si
+       corresponde, el impulsor ("Con el impulso de X") o el origen de las
+       imágenes ("Imágenes del archivo de X").
        Para una categoría sin colecciones, dejá solo el <p class="fila-vacia">. -->
   </main>
   </div><!-- /wrap: la sección de colecciones es ancha -->
 
   <section class="colecciones" id="colecciones">
     <div class="cabecera">
-      <div>
-        <p class="eyebrow es">El banco</p>
-        <p class="eyebrow en">The bank</p>
-        <h2 class="es">Colecciones de imágenes</h2>
-        <h2 class="en">Image collections</h2>
-        <p class="es">Cada expedición deja una colección. Las organizaciones aliadas acceden a ellas sin costo.</p>
-        <p class="en">Every expedition leaves a collection. Partner organisations access them at no cost.</p>
-      </div>
+      <p class="eyebrow es">El banco</p>
+      <p class="eyebrow en">The bank</p>
+      <h2 class="es">Colecciones de imágenes</h2>
+      <h2 class="en">Image collections</h2>
+      <p class="es">Cada expedición deja una colección. Las organizaciones aliadas acceden a ellas sin costo.</p>
+      <p class="en">Every expedition leaves a collection. Partner organisations access them at no cost.</p>
       <div class="categorias" role="tablist">
         <button type="button" role="tab" aria-selected="true" data-cat="fauna"><span class="es">Fauna silvestre</span><span class="en">Wildlife</span></button>
         <button type="button" role="tab" aria-selected="false" data-cat="paisajes"><span class="es">Paisajes</span><span class="en">Landscapes</span></button>
@@ -142,51 +141,70 @@
       </div>
     </div>
 
-    <div class="fila" data-cat="fauna" data-activa>
-      <article class="tarjeta">
-        <img src="colecciones/orcas-peninsula-valdes.jpg" alt="" width="800" height="1200" loading="lazy">
-        <span class="pastilla"><span class="es">Orcas de Península Valdés</span><span class="en">Orcas of Península Valdés</span></span>
-        <button type="button" class="mas" aria-label="Ver detalle"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></button>
-        <div class="detalle">
-          <p class="es">Vistas aéreas y de costa de la población de orcas del golfo, con individuos identificados en Orca Explorer.</p>
-          <p class="en">Aerial and shore views of the gulf's orca population, with individuals identified in Orca Explorer.</p>
-          <span class="meta es">En preparación · Chubut</span>
-          <span class="meta en">In preparation · Chubut</span>
+    <div class="carrusel" data-cat="fauna" data-activa>
+      <article class="coleccion" data-activa>
+        <div class="ficha">
+          <div class="flechas">
+            <button type="button" class="ant" aria-label="Colección anterior"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3 5 9l6 6"/></svg></button>
+            <button type="button" class="sig" aria-label="Colección siguiente"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 3 6 6-6 6"/></svg></button>
+          </div>
+          <div class="texto">
+            <h3 class="es">Orcas de Península Valdés</h3>
+            <h3 class="en">Orcas of Península Valdés</h3>
+            <p class="es">Vistas aéreas y de costa de la población de orcas del golfo, con individuos identificados en Orca Explorer.</p>
+            <p class="en">Aerial and shore views of the gulf's orca population, with individuals identified in Orca Explorer.</p>
+            <div class="datos es"><span>En preparación</span><span>Chubut, Argentina</span><span>Imágenes del archivo de <a href="https://lyrafilms.org" target="_blank" rel="noopener">Lyra Films</a></span></div>
+            <div class="datos en"><span>In preparation</span><span>Chubut, Argentina</span><span>Images from the <a href="https://lyrafilms.org" target="_blank" rel="noopener">Lyra Films</a> archive</span></div>
+          </div>
         </div>
+        <div class="coleccion-img"><img src="../programas/orca-explorer.jpg" alt="" width="2560" height="1089" loading="lazy"></div>
       </article>
-      <article class="tarjeta">
-        <img src="colecciones/vida-intermareal.jpg" alt="" width="800" height="1200" loading="lazy">
-        <span class="pastilla"><span class="es">Vida intermareal</span><span class="en">Intertidal life</span></span>
-        <button type="button" class="mas" aria-label="Ver detalle"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></button>
-        <div class="detalle">
-          <p class="es">Peces, invertebrados y algas de las restingas patagónicas, fotografiados en marea baja y bajo el agua.</p>
-          <p class="en">Fish, invertebrates and algae of the Patagonian rocky shores, photographed at low tide and underwater.</p>
-          <span class="meta es">En preparación · Chubut</span>
-          <span class="meta en">In preparation · Chubut</span>
+
+      <article class="coleccion">
+        <div class="ficha">
+          <div class="flechas">
+            <button type="button" class="ant" aria-label="Colección anterior"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3 5 9l6 6"/></svg></button>
+            <button type="button" class="sig" aria-label="Colección siguiente"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 3 6 6-6 6"/></svg></button>
+          </div>
+          <div class="texto">
+            <h3 class="es">Vida intermareal</h3>
+            <h3 class="en">Intertidal life</h3>
+            <p class="es">Peces, invertebrados y algas de las restingas patagónicas, fotografiados en marea baja y bajo el agua.</p>
+            <p class="en">Fish, invertebrates and algae of the Patagonian rocky shores, photographed at low tide and underwater.</p>
+            <div class="datos es"><span>En preparación</span><span>Chubut, Argentina</span><span>Imágenes del archivo de <a href="https://lyrafilms.org" target="_blank" rel="noopener">Lyra Films</a></span></div>
+            <div class="datos en"><span>In preparation</span><span>Chubut, Argentina</span><span>Images from the <a href="https://lyrafilms.org" target="_blank" rel="noopener">Lyra Films</a> archive</span></div>
+          </div>
         </div>
+        <div class="coleccion-img"><img src="../programas/mirada-natural.jpg" alt="" width="2560" height="1089" loading="lazy"></div>
       </article>
     </div>
 
-    <div class="fila" data-cat="paisajes">
-      <article class="tarjeta">
-        <img src="colecciones/costa-patagonica.jpg" alt="" width="800" height="1200" loading="lazy">
-        <span class="pastilla"><span class="es">Costa patagónica</span><span class="en">Patagonian coast</span></span>
-        <button type="button" class="mas" aria-label="Ver detalle"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></button>
-        <div class="detalle">
-          <p class="es">Acantilados, playas y golfos entre Península Valdés y el sur de Chubut.</p>
-          <p class="en">Cliffs, beaches and gulfs between Península Valdés and southern Chubut.</p>
-          <span class="meta es">En preparación · Chubut</span>
-          <span class="meta en">In preparation · Chubut</span>
+    <div class="carrusel" data-cat="paisajes">
+      <article class="coleccion" data-activa>
+        <div class="ficha">
+          <div class="flechas">
+            <button type="button" class="ant" aria-label="Colección anterior"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3 5 9l6 6"/></svg></button>
+            <button type="button" class="sig" aria-label="Colección siguiente"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 3 6 6-6 6"/></svg></button>
+          </div>
+          <div class="texto">
+            <h3 class="es">Costa patagónica</h3>
+            <h3 class="en">Patagonian coast</h3>
+            <p class="es">Acantilados, playas y golfos entre Península Valdés y el sur de Chubut.</p>
+            <p class="en">Cliffs, beaches and gulfs between Península Valdés and southern Chubut.</p>
+            <div class="datos es"><span>En preparación</span><span>Chubut, Argentina</span><span>Imágenes del archivo de <a href="https://lyrafilms.org" target="_blank" rel="noopener">Lyra Films</a></span></div>
+            <div class="datos en"><span>In preparation</span><span>Chubut, Argentina</span><span>Images from the <a href="https://lyrafilms.org" target="_blank" rel="noopener">Lyra Films</a> archive</span></div>
+          </div>
         </div>
+        <div class="coleccion-img"><img src="../portada.jpg" alt="" width="1920" height="817" loading="lazy"></div>
       </article>
     </div>
 
-    <div class="fila" data-cat="humana">
+    <div class="carrusel" data-cat="humana">
       <p class="fila-vacia es">Todavía no hay colecciones en esta categoría.</p>
       <p class="fila-vacia en">There are no collections in this category yet.</p>
     </div>
 
-    <div class="fila" data-cat="clima">
+    <div class="carrusel" data-cat="clima">
       <p class="fila-vacia es">Todavía no hay colecciones en esta categoría.</p>
       <p class="fila-vacia en">There are no collections in this category yet.</p>
     </div>

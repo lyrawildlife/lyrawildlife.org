@@ -331,8 +331,8 @@ footer a{color:inherit;border-bottom-color:var(--linea)}
 footer a:hover{color:var(--terracota)}
 
 /* ---- Idiomas ------------------------------------------------------------- */
-[data-lang="es"] .en{display:none}
-[data-lang="en"] .es{display:none}
+html[data-lang="es"] .en{display:none}
+html[data-lang="en"] .es{display:none}
 
 /* ---- Colecciones del banco (Mirada Natural) ------------------------------ */
 .colecciones{
@@ -341,10 +341,10 @@ footer a:hover{color:var(--terracota)}
   padding:calc(var(--u)*8) 0;
   border-top:1px solid var(--linea);
 }
-.colecciones .fila{padding:0 calc(var(--u)*3)}
 .colecciones + .wrap > main > section:first-child{border-top:1px solid var(--linea)}
-/* La cabecera (rótulo, título, intro y categorías) va en la misma columna que
-   el resto del texto del sitio; solo las tarjetas usan el bloque ancho. */
+/* La cabecera (rótulo, título, intro y categorías) y la ficha de cada colección
+   van en la misma columna que el resto del texto del sitio; solo la foto usa el
+   bloque ancho. */
 .colecciones .cabecera{
   max-width:var(--col);
   margin:0 auto calc(var(--u)*4);
@@ -354,62 +354,59 @@ footer a:hover{color:var(--terracota)}
 .colecciones .cabecera p{margin:0 0 calc(var(--u)*2)}
 .colecciones .cabecera p.eyebrow{margin-bottom:calc(var(--u)*2)}
 
-/* Selector de categorías */
-.categorias{display:flex;flex-wrap:wrap;gap:calc(var(--u)*1);margin-top:calc(var(--u)*3)}
-.categorias button{
-  font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.02em;
-  padding:9px 14px;border-radius:999px;cursor:pointer;
-  background:none;border:1px solid var(--linea);color:var(--texto-sec);
+/* Selector de categorías: una sola pastilla con las opciones adentro */
+.categorias{
+  display:flex;
+  margin-top:calc(var(--u)*3);
+  border:1px solid rgba(63,82,90,.35);
+  border-radius:999px;
+  padding:4px;
 }
-.categorias button[aria-selected="true"]{background:var(--azul-profundo);border-color:var(--azul-profundo);color:var(--perola)}
+.categorias button{
+  flex:1 1 auto;
+  font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.02em;white-space:nowrap;
+  padding:10px 14px;border-radius:999px;cursor:pointer;
+  background:none;border:0;color:var(--texto-sec);
+  transition:background .25s ease,color .25s ease;
+}
+.categorias button[aria-selected="true"]{background:var(--azul-profundo);color:var(--perola)}
 .categorias button:hover{color:var(--azul-profundo)}
 .categorias button[aria-selected="true"]:hover{color:var(--perola)}
 
-/* Filas de tarjetas, una por categoría */
-/* Las tarjetas se centran como conjunto: cuatro por fila como máximo, del mismo ancho. */
-.fila{display:none;justify-content:center;gap:var(--u)}
-.fila[data-activa]{display:flex}
-.fila .tarjeta{flex:0 0 calc((100% - 3*var(--u))/4)}
-.fila-vacia{width:100%;max-width:var(--col);margin:0 auto;padding:calc(var(--u)*2) calc(var(--u)*3);color:var(--texto-terc);font-size:15px}
-.tarjeta{
-  position:relative;
-  aspect-ratio:2/3;
-  border-radius:16px;
-  overflow:hidden;
-  background:var(--beige);
-  color:var(--perola);
+/* Un carrusel por categoría; una colección visible por vez */
+.carrusel{display:none}
+.carrusel[data-activa]{display:block}
+.coleccion{display:none}
+.coleccion[data-activa]{display:block}
+.fila-vacia{max-width:var(--col);margin:0 auto;padding:calc(var(--u)*2) calc(var(--u)*3);color:var(--texto-terc);font-size:15px}
+
+.ficha{
+  max-width:var(--col);margin:0 auto calc(var(--u)*3);padding:0 calc(var(--u)*3);
+  display:grid;grid-template-columns:auto 1fr;gap:calc(var(--u)*3);align-items:start;
 }
-.tarjeta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity .35s ease}
-.tarjeta .pastilla{
-  position:absolute;top:14px;left:14px;z-index:2;
-  background:var(--perola);color:var(--azul-profundo);
-  font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:-.01em;
-  padding:9px 15px;border-radius:999px;max-width:calc(100% - 70px);
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+.flechas{display:flex;gap:calc(var(--u)*1);padding-top:4px}
+.flechas button{
+  width:44px;height:44px;border-radius:999px;cursor:pointer;padding:0;
+  border:1px solid var(--azul-profundo);background:none;color:var(--azul-profundo);
+  display:grid;place-items:center;transition:background .25s ease,color .25s ease;
 }
-.tarjeta .mas{
-  position:absolute;top:12px;right:12px;z-index:3;
-  width:36px;height:36px;border-radius:999px;border:0;cursor:pointer;padding:0;
-  background:rgba(240,237,228,.9);color:var(--azul-profundo);
-  display:grid;place-items:center;
+.flechas button:hover{background:var(--azul-profundo);color:var(--perola)}
+.flechas button svg{width:18px;height:18px}
+.carrusel[data-unica] .flechas{visibility:hidden}   /* una sola colección: sin flechas */
+.ficha .texto h3{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.01em;margin:0 0 calc(var(--u)*1)}
+.ficha .texto p{color:var(--texto-sec);margin:0 0 calc(var(--u)*1.5);max-width:52ch}
+.ficha .datos{display:flex;flex-wrap:wrap;gap:calc(var(--u)*1) calc(var(--u)*3);font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--texto-terc)}
+.ficha .datos a{color:inherit;border-bottom-color:var(--linea)}
+.ficha .datos a:hover{color:var(--terracota)}
+
+/* Foto: bloque ancho, 2,35:1, esquinas redondeadas siempre (nunca va a sangre) */
+.coleccion-img{
+  position:relative;aspect-ratio:2.35/1;overflow:hidden;
+  background:var(--azul-profundo);border-radius:12px;
+  margin:0 calc(var(--u)*3);
 }
-.tarjeta .mas svg{width:16px;height:16px;transition:transform .3s ease}
-.tarjeta .detalle{
-  position:absolute;inset:0;z-index:1;
-  padding:72px 18px 20px;
-  display:flex;flex-direction:column;justify-content:flex-end;gap:calc(var(--u)*1.5);
-  background:var(--beige);color:var(--azul-profundo);
-  opacity:0;transition:opacity .35s ease;
-}
-.tarjeta .detalle p{font-size:14px;line-height:1.5;margin:0;color:var(--texto-sec)}
-.tarjeta .detalle .meta{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--texto-terc)}
-.tarjeta .detalle a{font-size:13px;font-weight:500}
-.tarjeta[data-abierta] img{opacity:0}
-.tarjeta[data-abierta] .detalle{opacity:1}
-.tarjeta[data-abierta] .mas svg{transform:rotate(45deg)}
-.tarjeta.sin-foto.azul{background:var(--azul)}
-.tarjeta.sin-foto.verde{background:var(--verde)}
-.tarjeta.sin-foto.profundo{background:var(--azul-profundo)}
+.coleccion-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+@media (min-width:1300px){.coleccion-img{margin:0}}
 
 /* ---- Formulario ---------------------------------------------------------- */
 .formulario{margin-top:calc(var(--u)*3)}
@@ -427,10 +424,13 @@ footer a:hover{color:var(--terracota)}
 .formulario .btn{cursor:pointer}
 
 @media (max-width:900px){
-  .fila{justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--u)}
-  .fila .tarjeta{flex:0 0 72%;scroll-snap-align:start}
+  .categorias{flex-wrap:wrap;border:0;padding:0;gap:calc(var(--u)*1)}
+  .categorias button{flex:0 0 auto;border:1px solid var(--linea)}
+  .categorias button[aria-selected="true"]{border-color:var(--azul-profundo)}
 }
 @media (max-width:620px){
+  .ficha{grid-template-columns:1fr}
+  .flechas{order:2}
   .formulario .campos{grid-template-columns:1fr}
 }
 

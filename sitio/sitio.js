@@ -51,24 +51,41 @@ var FORMULARIOS = {
   });
 })();
 
-/* 3. Colecciones de Mirada Natural: pestañas de categoría y tarjetas que se abren. */
+/* 3. Colecciones de Mirada Natural: pestañas de categoría y flechas para recorrer
+      las colecciones de la categoría activa. */
 (function () {
   var tabs = document.querySelectorAll('.categorias button');
+  var carruseles = document.querySelectorAll('.carrusel');
+  if (!tabs.length) return;
+
+  function mostrar(carrusel, indice) {
+    var items = carrusel.querySelectorAll('.coleccion');
+    items.forEach(function (it, i) {
+      if (i === indice) it.setAttribute('data-activa', ''); else it.removeAttribute('data-activa');
+    });
+  }
+
+  carruseles.forEach(function (c) {
+    var items = c.querySelectorAll('.coleccion');
+    if (items.length <= 1) c.setAttribute('data-unica', '');
+    c.querySelectorAll('.flechas button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var actual = Array.prototype.indexOf.call(items, c.querySelector('.coleccion[data-activa]'));
+        var n = items.length;
+        var siguiente = b.classList.contains('sig') ? (actual + 1) % n : (actual - 1 + n) % n;
+        mostrar(c, siguiente);
+      });
+    });
+  });
+
   tabs.forEach(function (b) {
     b.addEventListener('click', function () {
       tabs.forEach(function (x) { x.setAttribute('aria-selected', 'false'); });
       b.setAttribute('aria-selected', 'true');
-      document.querySelectorAll('.fila').forEach(function (f) {
-        if (f.dataset.cat === b.dataset.cat) f.setAttribute('data-activa', '');
-        else f.removeAttribute('data-activa');
+      carruseles.forEach(function (c) {
+        if (c.dataset.cat === b.dataset.cat) { c.setAttribute('data-activa', ''); mostrar(c, 0); }
+        else c.removeAttribute('data-activa');
       });
-    });
-  });
-  document.querySelectorAll('.tarjeta .mas').forEach(function (m) {
-    m.addEventListener('click', function () {
-      var t = m.closest('.tarjeta');
-      if (t.hasAttribute('data-abierta')) t.removeAttribute('data-abierta');
-      else t.setAttribute('data-abierta', '');
     });
   });
 })();
