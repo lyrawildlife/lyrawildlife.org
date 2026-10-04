@@ -181,13 +181,14 @@ section:first-of-type{border-top:0}
 }
 .titulo-seccion{
   text-align:center;
-  font-size:13px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  font-weight:500;
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(28px,3.6vw,36px);
+  line-height:1.2;
+  letter-spacing:-.01em;
   color:var(--azul-profundo);
   max-width:none;
-  margin:0 0 calc(var(--u)*4);
+  margin:0 0 calc(var(--u)*5);
 }
 .cover{
   position:relative;
