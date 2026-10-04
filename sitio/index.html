@@ -133,7 +133,7 @@
 
 <!-- ======================================================= PROGRAMAS ===
      Una portada por programa. Cada portada necesita una foto horizontal en
-     programas/<nombre>.jpg (recomendado 1920 × 817, 2.35:1). Si la foto falta,
+     programas/<nombre>.jpg + .webp (2560 × 1089, 2.35:1). Si la foto falta,
      la portada se muestra sobre azul profundo sin romperse.
      Para agregar un programa: copiá un bloque <a class="cover"> entero. -->
 <section id="programas" class="programas">
@@ -141,7 +141,7 @@
   <p class="titulo-seccion en">Our programmes</p>
 
   <a class="cover" href="https://orcaexplorer.com" rel="noopener">
-    <img src="programas/orca-explorer.jpg" alt="" width="1920" height="817" onerror="this.remove()">
+    <picture><source srcset="programas/orca-explorer.webp" type="image/webp"><img src="programas/orca-explorer.jpg" alt="" width="2560" height="1089" onerror="this.closest('picture').remove()"></picture>
     <span class="cover-texto">
       <span class="cover-sub es">Plataforma de ciencia ciudadana y conocimiento colaborativo</span>
       <span class="cover-sub en">A platform for citizen science and collaborative knowledge</span>
@@ -152,7 +152,7 @@
   </a>
 
   <a class="cover" href="mirada-natural/">
-    <img src="programas/mirada-natural.jpg" alt="" width="1920" height="817" onerror="this.remove()">
+    <picture><source srcset="programas/mirada-natural.webp" type="image/webp"><img src="programas/mirada-natural.jpg" alt="" width="2560" height="1089" onerror="this.closest('picture').remove()"></picture>
     <span class="cover-texto">
       <span class="cover-sub es">Banco de Imágenes de la Naturaleza</span>
       <span class="cover-sub en">Nature Image Bank</span>
