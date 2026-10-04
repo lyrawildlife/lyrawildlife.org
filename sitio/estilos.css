@@ -289,8 +289,10 @@ section:first-of-type{border-top:0}
 .btn.primario:hover{background:var(--azul);border-color:var(--azul)}
 
 /* ---- Logos de aliados (se activa cuando haya logos) ---------------------- */
-.logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:calc(var(--u)*3);margin-top:calc(var(--u)*4);align-items:center}
-.logos img{width:100%;height:auto;display:block;filter:grayscale(1);opacity:.85}
+.logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:calc(var(--u)*4);margin-top:calc(var(--u)*4);align-items:center}
+.logos a{border:0;display:block}
+.logos img{width:100%;max-width:220px;height:auto;display:block;filter:grayscale(1);opacity:.8;transition:opacity .25s ease}
+.logos a:hover img{opacity:1}
 
 /* ---- Datos institucionales ----------------------------------------------- */
 dl{margin:calc(var(--u)*3) 0 0;display:grid;grid-template-columns:200px 1fr;gap:calc(var(--u)*1.5) calc(var(--u)*3)}
