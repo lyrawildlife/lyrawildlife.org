@@ -24,6 +24,7 @@ Hosting: Netlify, plan gratuito. DNS en Namecheap. Online desde el 05/09/2026.
 ## Cómo publicar
 
 - Claude edita en `sitio/` y deja el commit preparado. Kevin abre GitHub Desktop y aprieta "Push origin". Netlify, vinculado al repositorio, publica la rama `main` en un minuto.
+- Cada push cuesta 15 de los 300 créditos mensuales del plan gratuito de Netlify (más el tráfico). Regla: acumular los cambios y publicar una vez por sesión de trabajo, no un push por cambio.
 - Alternativa manual: app.netlify.com → Deploys → arrastrar la carpeta `sitio/`.
 
 ## Nota sobre Netlify
