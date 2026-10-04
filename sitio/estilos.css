@@ -326,6 +326,10 @@ footer a:hover{color:var(--terracota)}
 [data-lang="es"] .en{display:none}
 [data-lang="en"] .es{display:none}
 
+@media (min-width:1300px){
+  .cover{border-radius:12px}         /* esquinas redondeadas solo cuando la portada no va a sangre */
+}
+
 @media (min-width:1600px){
   :root{--col:820px}
   body{font-size:18px}
