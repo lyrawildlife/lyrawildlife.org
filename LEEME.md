@@ -37,7 +37,7 @@ El plan gratuito bloquea los deploys de repositorios privados cuando quien hace 
 - Vincular el sitio de Netlify al repositorio de GitHub (publish directory: `sitio`).
 - Versión en preparación (01/10/2026, sin publicar): identidad v2 (paleta azul, wordmark, favicon) + sección Programas + página de Mirada Natural.
 - Formulario de pedido de imágenes: lo procesa Netlify Forms. Activar una vez "Form detection" en el panel de Netlify (Forms) y agregar ahí la notificación por email a contacto@lyrawildlife.org. Los otros dos formularios (aliados, impulsores) siguen como Google Forms pendientes: pegar las URL en `sitio.js`.
-- Colecciones de Mirada Natural: las tres cargadas son provisorias ("En preparación") y usan fotos que ya están en el sitio. Reemplazar por las reales: nombre, categoría, descripción, línea de datos (lugar; impulsor o archivo de origen) y foto horizontal 2,35:1 (2560 × 1089) en `sitio/mirada-natural/colecciones/`.
+- Colecciones de Mirada Natural: las tres cargadas son provisorias ("En preparación") y usan fotos que ya están en el sitio. Reemplazar por las reales: nombre, categoría, descripción, línea de impulsor (si lo tiene) y foto horizontal 2,35:1 (2560 × 1089) en `sitio/mirada-natural/colecciones/`.
 - Fotos de las portadas de programas en la home: `sitio/programas/orca-explorer.jpg` y `sitio/programas/mirada-natural.jpg` (ver `sitio/programas/LEEME.txt`).
 - Fotos para las páginas de programas: `sitio/orca-explorer/portada.jpg` y `sitio/mirada-natural/portada.jpg` (horizontal, 2.35:1).
 - Logos de aliados: bloque comentado en `mirada-natural/index.html`, listo para activar.
