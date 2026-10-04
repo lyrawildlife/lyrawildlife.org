@@ -7,7 +7,6 @@
 
 var FORMULARIOS = {
   aliados:  "",   // Postulación de organizaciones aliadas
-  pedido:   "",   // Pedido de imágenes a medida (para aliados)
   sponsors: ""    // Contacto de sponsors
 };
 
@@ -49,5 +48,27 @@ var FORMULARIOS = {
 
   buttons.forEach(function (b) {
     b.addEventListener('click', function () { setLang(b.dataset.set); });
+  });
+})();
+
+/* 3. Colecciones de Mirada Natural: pestañas de categoría y tarjetas que se abren. */
+(function () {
+  var tabs = document.querySelectorAll('.categorias button');
+  tabs.forEach(function (b) {
+    b.addEventListener('click', function () {
+      tabs.forEach(function (x) { x.setAttribute('aria-selected', 'false'); });
+      b.setAttribute('aria-selected', 'true');
+      document.querySelectorAll('.fila').forEach(function (f) {
+        if (f.dataset.cat === b.dataset.cat) f.setAttribute('data-activa', '');
+        else f.removeAttribute('data-activa');
+      });
+    });
+  });
+  document.querySelectorAll('.tarjeta .mas').forEach(function (m) {
+    m.addEventListener('click', function () {
+      var t = m.closest('.tarjeta');
+      if (t.hasAttribute('data-abierta')) t.removeAttribute('data-abierta');
+      else t.setAttribute('data-abierta', '');
+    });
   });
 })();

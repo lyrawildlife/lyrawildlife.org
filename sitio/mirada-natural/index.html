@@ -114,6 +114,139 @@
     </div>
   </section>
 
+  <!-- ===================================================== COLECCIONES ===
+       Las colecciones del banco, por categoría. Cada <article class="tarjeta">
+       es una colección: foto vertical 2:3 en mirada-natural/colecciones/
+       (800 × 1200 px), nombre en la pastilla, descripción en .detalle.
+       Si una colección todavía no tiene foto, usá class="tarjeta sin-foto azul"
+       (o verde, o profundo) en vez del <img>.
+       Para una categoría sin colecciones, dejá solo el <p class="fila-vacia">. -->
+  </main>
+  </div><!-- /wrap: la sección de colecciones es ancha -->
+
+  <section class="colecciones" id="colecciones">
+    <div class="cabecera">
+      <div>
+        <p class="eyebrow es">El banco</p>
+        <p class="eyebrow en">The bank</p>
+        <h2 class="es">Colecciones de imágenes</h2>
+        <h2 class="en">Image collections</h2>
+        <p class="es">Cada expedición deja una colección. Las organizaciones aliadas las descargan sin costo; el resto puede recorrerlas.</p>
+        <p class="en">Every expedition leaves a collection. Partner organisations download them at no cost; everyone else can browse them.</p>
+      </div>
+      <div class="categorias" role="tablist">
+        <button type="button" role="tab" aria-selected="true" data-cat="fauna"><span class="es">Fauna silvestre</span><span class="en">Wildlife</span></button>
+        <button type="button" role="tab" aria-selected="false" data-cat="paisajes"><span class="es">Paisajes</span><span class="en">Landscapes</span></button>
+        <button type="button" role="tab" aria-selected="false" data-cat="humana"><span class="es">Actividad humana</span><span class="en">Human activity</span></button>
+        <button type="button" role="tab" aria-selected="false" data-cat="clima"><span class="es">Cambio climático y conservación</span><span class="en">Climate change and conservation</span></button>
+      </div>
+    </div>
+
+    <div class="fila" data-cat="fauna" data-activa>
+      <article class="tarjeta">
+        <img src="colecciones/orcas-peninsula-valdes.jpg" alt="" width="800" height="1200" loading="lazy">
+        <span class="pastilla"><span class="es">Orcas de Península Valdés</span><span class="en">Orcas of Península Valdés</span></span>
+        <button type="button" class="mas" aria-label="Ver detalle"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></button>
+        <div class="detalle">
+          <p class="es">Vistas aéreas y de costa de la población de orcas del golfo, con individuos identificados en Orca Explorer.</p>
+          <p class="en">Aerial and shore views of the gulf's orca population, with individuals identified in Orca Explorer.</p>
+          <span class="meta es">En preparación · Chubut</span>
+          <span class="meta en">In preparation · Chubut</span>
+        </div>
+      </article>
+      <article class="tarjeta">
+        <img src="colecciones/vida-intermareal.jpg" alt="" width="800" height="1200" loading="lazy">
+        <span class="pastilla"><span class="es">Vida intermareal</span><span class="en">Intertidal life</span></span>
+        <button type="button" class="mas" aria-label="Ver detalle"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></button>
+        <div class="detalle">
+          <p class="es">Peces, invertebrados y algas de las restingas patagónicas, fotografiados en marea baja y bajo el agua.</p>
+          <p class="en">Fish, invertebrates and algae of the Patagonian rocky shores, photographed at low tide and underwater.</p>
+          <span class="meta es">En preparación · Chubut</span>
+          <span class="meta en">In preparation · Chubut</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="fila" data-cat="paisajes">
+      <article class="tarjeta">
+        <img src="colecciones/costa-patagonica.jpg" alt="" width="800" height="1200" loading="lazy">
+        <span class="pastilla"><span class="es">Costa patagónica</span><span class="en">Patagonian coast</span></span>
+        <button type="button" class="mas" aria-label="Ver detalle"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></button>
+        <div class="detalle">
+          <p class="es">Acantilados, playas y golfos entre Península Valdés y el sur de Chubut.</p>
+          <p class="en">Cliffs, beaches and gulfs between Península Valdés and southern Chubut.</p>
+          <span class="meta es">En preparación · Chubut</span>
+          <span class="meta en">In preparation · Chubut</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="fila" data-cat="humana">
+      <p class="fila-vacia es">Todavía no hay colecciones en esta categoría.</p>
+      <p class="fila-vacia en">There are no collections in this category yet.</p>
+    </div>
+
+    <div class="fila" data-cat="clima">
+      <p class="fila-vacia es">Todavía no hay colecciones en esta categoría.</p>
+      <p class="fila-vacia en">There are no collections in this category yet.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+  <main>
+
+  <!-- ========================================================== PEDIDO ===
+       Formulario de pedido de imágenes. Lo procesa Netlify Forms: hay que
+       activar "Form detection" una vez en el panel de Netlify (Forms) y
+       configurar la notificación por email ahí mismo. -->
+  <section id="pedido">
+    <p class="eyebrow es">Pedidos</p>
+    <p class="eyebrow en">Requests</p>
+
+    <h2 class="es">¿Necesitás imágenes de un tema en particular?</h2>
+    <h2 class="en">Need images on a particular subject?</h2>
+
+    <p class="es">Contanos qué buscás y para qué. Si está en el banco, te lo mandamos. Si no, lo tenemos en cuenta para las próximas expediciones.</p>
+    <p class="en">Tell us what you are looking for and what it is for. If it is in the bank, we will send it. If not, we will keep it in mind for upcoming expeditions.</p>
+
+    <form class="formulario" name="pedido-imagenes" method="POST" action="/mirada-natural/gracias/" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="pedido-imagenes">
+      <p class="oculto"><label>No completar: <input name="bot-field"></label></p>
+
+      <div class="campos">
+        <label>
+          <span class="es">Nombre y apellido</span><span class="en">Full name</span>
+          <input type="text" name="nombre" required autocomplete="name">
+        </label>
+        <label>
+          <span class="es">Organización</span><span class="en">Organisation</span>
+          <input type="text" name="organizacion" autocomplete="organization">
+        </label>
+        <label>
+          <span class="es">Correo electrónico</span><span class="en">Email</span>
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>
+          <span class="es">Para cuándo lo necesitás</span><span class="en">When do you need it</span>
+          <input type="text" name="plazo">
+        </label>
+        <label class="ancho">
+          <span class="es">Qué imágenes buscás (tema, especie, lugar)</span><span class="en">What images you need (subject, species, place)</span>
+          <textarea name="pedido" rows="4" required></textarea>
+        </label>
+        <label class="ancho">
+          <span class="es">Para qué las vas a usar</span><span class="en">What you will use them for</span>
+          <textarea name="uso" rows="3" required></textarea>
+        </label>
+      </div>
+
+      <div class="acciones">
+        <button type="submit" class="btn primario es">Enviar pedido</button>
+        <button type="submit" class="btn primario en">Send request</button>
+      </div>
+    </form>
+  </section>
+
   <!-- ================================================= ORGANIZACIONES ==== -->
   <section id="aliados">
     <p class="eyebrow es">Para organizaciones</p>
@@ -149,8 +282,8 @@
         <div>
           <h3 class="es">Acceso</h3>
           <h3 class="en">Access</h3>
-          <p class="es">La organización recibe acceso al catálogo de descarga. Lo que no esté en el catálogo se puede <a data-form="pedido" data-asunto-es="Mirada Natural: pedido de imágenes" data-asunto-en="Mirada Natural: image request" href="mailto:contacto@lyrawildlife.org">pedir a medida</a>.</p>
-          <p class="en">The organisation receives access to the download catalogue. Anything not in the catalogue can be <a data-form="pedido" data-asunto-es="Mirada Natural: pedido de imágenes" data-asunto-en="Mirada Natural: image request" href="mailto:contacto@lyrawildlife.org">requested</a>.</p>
+          <p class="es">La organización recibe acceso al catálogo de descarga. Lo que no esté en el catálogo se puede <a href="#pedido">pedir a medida</a>.</p>
+          <p class="en">The organisation receives access to the download catalogue. Anything not in the catalogue can be <a href="#pedido">requested</a>.</p>
         </div>
       </div>
     </div>

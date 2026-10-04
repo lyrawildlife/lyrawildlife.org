@@ -334,6 +334,105 @@ footer a:hover{color:var(--terracota)}
 [data-lang="es"] .en{display:none}
 [data-lang="en"] .es{display:none}
 
+/* ---- Colecciones del banco (Mirada Natural) ------------------------------ */
+.colecciones{
+  width:min(100vw,var(--ancho));
+  margin-left:calc(50% - min(50vw,var(--ancho)/2));
+  padding:calc(var(--u)*8) calc(var(--u)*3);
+  border-top:1px solid var(--linea);
+}
+.colecciones + .wrap > main > section:first-child{border-top:1px solid var(--linea)}
+.colecciones .cabecera{
+  display:grid;
+  grid-template-columns:minmax(220px,300px) 1fr;
+  gap:calc(var(--u)*4) calc(var(--u)*8);
+  align-items:end;
+  margin-bottom:calc(var(--u)*4);
+}
+.colecciones .cabecera h2{margin-bottom:calc(var(--u)*2)}
+.colecciones .cabecera p{color:var(--texto-sec);font-size:15px;max-width:30ch;margin:0}
+.colecciones .cabecera p.eyebrow{color:var(--texto-terc);font-size:11px;margin-bottom:calc(var(--u)*2)}
+
+/* Selector de categorías */
+.categorias{display:flex;flex-wrap:wrap;gap:calc(var(--u)*1);justify-self:start}
+.categorias button{
+  font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.02em;
+  padding:9px 14px;border-radius:999px;cursor:pointer;
+  background:none;border:1px solid var(--linea);color:var(--texto-sec);
+}
+.categorias button[aria-selected="true"]{background:var(--azul-profundo);border-color:var(--azul-profundo);color:var(--perola)}
+.categorias button:hover{color:var(--azul-profundo)}
+.categorias button[aria-selected="true"]:hover{color:var(--perola)}
+
+/* Filas de tarjetas, una por categoría */
+.fila{display:none;grid-template-columns:repeat(4,1fr);gap:var(--u)}
+.fila[data-activa]{display:grid}
+.fila-vacia{grid-column:1/-1;color:var(--texto-terc);font-size:15px;margin:0;padding:calc(var(--u)*4) 0}
+.tarjeta{
+  position:relative;
+  aspect-ratio:2/3;
+  border-radius:16px;
+  overflow:hidden;
+  background:var(--beige);
+  color:var(--perola);
+}
+.tarjeta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity .35s ease}
+.tarjeta .pastilla{
+  position:absolute;top:14px;left:14px;z-index:2;
+  background:var(--perola);color:var(--azul-profundo);
+  font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:-.01em;
+  padding:9px 15px;border-radius:999px;max-width:calc(100% - 70px);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.tarjeta .mas{
+  position:absolute;top:12px;right:12px;z-index:3;
+  width:36px;height:36px;border-radius:999px;border:0;cursor:pointer;padding:0;
+  background:rgba(240,237,228,.9);color:var(--azul-profundo);
+  display:grid;place-items:center;
+}
+.tarjeta .mas svg{width:16px;height:16px;transition:transform .3s ease}
+.tarjeta .detalle{
+  position:absolute;inset:0;z-index:1;
+  padding:72px 18px 20px;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:calc(var(--u)*1.5);
+  background:var(--beige);color:var(--azul-profundo);
+  opacity:0;transition:opacity .35s ease;
+}
+.tarjeta .detalle p{font-size:14px;line-height:1.5;margin:0;color:var(--texto-sec)}
+.tarjeta .detalle .meta{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--texto-terc)}
+.tarjeta .detalle a{font-size:13px;font-weight:500}
+.tarjeta[data-abierta] img{opacity:0}
+.tarjeta[data-abierta] .detalle{opacity:1}
+.tarjeta[data-abierta] .mas svg{transform:rotate(45deg)}
+.tarjeta.sin-foto.azul{background:var(--azul)}
+.tarjeta.sin-foto.verde{background:var(--verde)}
+.tarjeta.sin-foto.profundo{background:var(--azul-profundo)}
+
+/* ---- Formulario ---------------------------------------------------------- */
+.formulario{margin-top:calc(var(--u)*3)}
+.formulario .oculto{display:none}
+.formulario .campos{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*2.5) calc(var(--u)*3)}
+.formulario label{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--texto-sec);letter-spacing:.02em}
+.formulario label.ancho{grid-column:1/-1}
+.formulario input,.formulario textarea{
+  font-family:var(--sans);font-size:16px;color:var(--azul-profundo);
+  background:var(--perola);border:1px solid rgba(63,82,90,.35);border-radius:6px;
+  padding:10px 12px;width:100%;
+}
+.formulario input:focus,.formulario textarea:focus{outline:2px solid var(--azul);outline-offset:1px;border-color:var(--azul)}
+.formulario textarea{resize:vertical;min-height:88px}
+.formulario .btn{cursor:pointer}
+
+@media (max-width:900px){
+  .colecciones .cabecera{grid-template-columns:1fr}
+  .fila{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--u)}
+  .tarjeta{scroll-snap-align:start}
+  .fila-vacia{grid-column:auto}
+}
+@media (max-width:620px){
+  .formulario .campos{grid-template-columns:1fr}
+}
+
 @media (min-width:1300px){
   .cover{border-radius:12px}         /* esquinas redondeadas solo cuando la portada no va a sangre */
 }
