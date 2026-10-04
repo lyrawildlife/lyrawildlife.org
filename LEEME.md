@@ -16,7 +16,7 @@ Hosting: Netlify, plan gratuito. DNS en Namecheap. Online desde el 05/09/2026.
 ## Reglas
 
 1. Las páginas son bilingües: cada texto está dos veces, con `class="es"` y `class="en"`. Se editan las dos.
-   Páginas: `index.html` (inicio) y `mirada-natural/index.html` (programa). Estilos en `estilos.css`; idioma y enlaces a formularios en `sitio.js`.
+   Páginas: `index.html` (inicio), `orca-explorer/index.html` y `mirada-natural/index.html` (programas). Estilos en `estilos.css`; idioma y enlaces a formularios en `sitio.js`.
 2. El historial de versiones lo lleva GitHub (cada publicación es un commit). La carpeta `versiones/` queda solo como registro de lo anterior y no se sube.
 3. La copia de referencia en el proyecto de Claude (`claude/lyrawildlife_org_index.html`) se actualiza con cada publicación.
 4. Nada se publica sin revisar antes una vista previa.
@@ -36,5 +36,5 @@ El plan gratuito bloquea los deploys de repositorios privados cuando quien hace 
 - Versión en preparación (01/10/2026, sin publicar): identidad v2 (paleta azul, wordmark, favicon) + sección Programas + página de Mirada Natural.
 - Formularios de Mirada Natural: crear los tres Google Forms (aliados, pedido de imágenes, sponsors) y pegar las URL en `sitio.js`. Hasta entonces los botones abren un correo a contacto@.
 - Fotos de las portadas de programas en la home: `sitio/programas/orca-explorer.jpg` y `sitio/programas/mirada-natural.jpg` (ver `sitio/programas/LEEME.txt`).
-- Foto para la página de Mirada Natural: guardar `sitio/mirada-natural/portada.jpg` (horizontal, 2.35:1).
+- Fotos para las páginas de programas: `sitio/orca-explorer/portada.jpg` y `sitio/mirada-natural/portada.jpg` (horizontal, 2.35:1).
 - Logos de aliados: bloque comentado en `mirada-natural/index.html`, listo para activar.
