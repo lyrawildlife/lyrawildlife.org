@@ -366,9 +366,11 @@ footer a:hover{color:var(--terracota)}
 .categorias button[aria-selected="true"]:hover{color:var(--perola)}
 
 /* Filas de tarjetas, una por categoría */
-.fila{display:none;grid-template-columns:repeat(4,1fr);gap:var(--u)}
-.fila[data-activa]{display:grid}
-.fila-vacia{grid-column:1/-1;color:var(--texto-terc);font-size:15px;margin:0;padding:calc(var(--u)*4) 0}
+/* Las tarjetas se centran como conjunto: cuatro por fila como máximo, del mismo ancho. */
+.fila{display:none;justify-content:center;gap:var(--u)}
+.fila[data-activa]{display:flex}
+.fila .tarjeta{flex:0 0 calc((100% - 3*var(--u))/4)}
+.fila-vacia{width:100%;max-width:var(--col);margin:0 auto;padding:calc(var(--u)*2) calc(var(--u)*3);color:var(--texto-terc);font-size:15px}
 .tarjeta{
   position:relative;
   aspect-ratio:2/3;
@@ -425,9 +427,8 @@ footer a:hover{color:var(--terracota)}
 .formulario .btn{cursor:pointer}
 
 @media (max-width:900px){
-  .fila{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--u)}
-  .tarjeta{scroll-snap-align:start}
-  .fila-vacia{grid-column:auto}
+  .fila{justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--u)}
+  .fila .tarjeta{flex:0 0 72%;scroll-snap-align:start}
 }
 @media (max-width:620px){
   .formulario .campos{grid-template-columns:1fr}
