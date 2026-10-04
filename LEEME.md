@@ -20,6 +20,7 @@ Hosting: Netlify, plan gratuito. DNS en Namecheap. Online desde el 05/09/2026.
 2. El historial de versiones lo lleva GitHub (cada publicación es un commit). La carpeta `versiones/` queda solo como registro de lo anterior y no se sube.
 3. La copia de referencia en el proyecto de Claude (`claude/lyrawildlife_org_index.html`) se actualiza con cada publicación.
 4. Nada se publica sin revisar antes una vista previa.
+5. Armonía. Antes de cada commit: (a) todo título y párrafo arranca en la columna de texto (`--col`); solo fotos, portadas y bandas usan el bloque ancho (`--ancho`); (b) correr `material/herramientas/revisar.py` (alineación y desbordes en 4 páginas × 3 anchos); (c) releer los textos nuevos contra los existentes: mismo tono, mismos términos (aliados, impulsores, Banco de Imágenes de la Naturaleza) y sin contradecir reglas ya publicadas (acceso al banco solo con convenio, convenio no público, sin cifras no verificadas).
 
 ## Cómo publicar
 
