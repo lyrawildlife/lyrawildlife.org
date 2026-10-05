@@ -116,3 +116,21 @@ var FORMULARIOS = {
     });
   });
 })();
+
+/* 5. Menú en celular: el botón "Menú" abre el panel con las secciones; se cierra
+      con "Cerrar", al elegir una sección o con Escape. */
+(function () {
+  var btn = document.querySelector('.menu-btn');
+  var panel = document.getElementById('panel-menu');
+  if (!btn || !panel) return;
+  function abrir(si) {
+    panel.hidden = !si;
+    btn.setAttribute('aria-expanded', si ? 'true' : 'false');
+    document.documentElement.classList.toggle('menu-abierto', si);
+  }
+  btn.addEventListener('click', function () { abrir(panel.hidden); });
+  panel.querySelectorAll('a, .cerrar').forEach(function (el) {
+    el.addEventListener('click', function () { abrir(false); });
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) abrir(false); });
+})();

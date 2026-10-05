@@ -35,43 +35,58 @@
 </head>
 
 <body>
-<div class="wrap">
 
-<header>
-  <div class="bar">
-    <!-- Logotipo: versión reforzada del wordmark, en el color del texto. No lo reemplaces por texto. -->
-    <a class="marca" href="./" aria-label="Lyra Wildlife">
-      <svg viewBox="-25.5 0 983 251" role="img" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M0 25.5V175.5"/><path d="M92 75.5 38 225.5"/><path d="m26 75.5 30 100"/><path d="M122 75.5v100"/><path d="M122 121.5a46 46 0 0 1 46-46"/><path d="M296 125.5a50 50 0 1 0-100 0 50 50 0 1 0 100 0"/><path d="M296 75.5v100"/><path d="m368 75.5 28 100 28-100 28 100 28-100"/><path d="M514 75.5v100"/><path d="M546 25.5v150"/><path d="M678 125.5a50 50 0 1 0-100 0 50 50 0 1 0 100 0"/><path d="M678 25.5v150"/><path d="M710 25.5v150"/><path d="M742 75.5v100"/><path d="M774 175.5V69.5"/><path d="M774 69.5a44 44 0 0 1 44-44"/><path d="M760 75.5h46"/><path d="M932 125.5a50 50 0 1 0-10.6 30.78"/><path d="M832 125.5h100"/></g><g fill="currentColor"><circle cx="514" cy="40.5" r="6.82"/><circle cx="742" cy="40.5" r="6.82"/></g></svg>
-    </a>
+<!-- ====================================================== PORTADA ======
+     Pantalla completa. La foto es portada.jpg (3:2; hoy 1920 × 1280, ideal
+     3840 × 2560) y se adapta a cualquier pantalla recortando los bordes.
+     Si la foto es clara arriba, la cabecera va en azul profundo (clase
+     cabecera-oscura en la section). Si es oscura arriba, sacá esa clase: la
+     cabecera pasa a pérola con un velo suave. -->
+<section class="hero cabecera-oscura" id="inicio">
+  <img src="portada.jpg" alt="Un buzo con cámara recorre un bosque de macroalgas" width="1920" height="1280" fetchpriority="high">
+<header class="top">
+  <!-- Logotipo: versión reforzada del wordmark, en el color del texto. No lo reemplaces por texto. -->
+  <a class="marca" href="./" aria-label="Lyra Wildlife">
+    <svg viewBox="-25.5 0 983 251" role="img" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M0 25.5V175.5"/><path d="M92 75.5 38 225.5"/><path d="m26 75.5 30 100"/><path d="M122 75.5v100"/><path d="M122 121.5a46 46 0 0 1 46-46"/><path d="M296 125.5a50 50 0 1 0-100 0 50 50 0 1 0 100 0"/><path d="M296 75.5v100"/><path d="m368 75.5 28 100 28-100 28 100 28-100"/><path d="M514 75.5v100"/><path d="M546 25.5v150"/><path d="M678 125.5a50 50 0 1 0-100 0 50 50 0 1 0 100 0"/><path d="M678 25.5v150"/><path d="M710 25.5v150"/><path d="M742 75.5v100"/><path d="M774 175.5V69.5"/><path d="M774 69.5a44 44 0 0 1 44-44"/><path d="M760 75.5h46"/><path d="M932 125.5a50 50 0 1 0-10.6 30.78"/><path d="M832 125.5h100"/></g><g fill="currentColor"><circle cx="514" cy="40.5" r="6.82"/><circle cx="742" cy="40.5" r="6.82"/></g></svg>
+  </a>
+  <nav class="menu" aria-label="Secciones">
+      <a href="#quienes-somos"><span class="es">Quiénes somos</span><span class="en">About us</span></a>
+      <a href="#mision"><span class="es">Misión</span><span class="en">Mission</span></a>
+      <a href="#programas"><span class="es">Programas</span><span class="en">Programs</span></a>
+      <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
+  </nav>
+  <div class="top-acciones">
     <nav class="langs" aria-label="Idioma">
-      <button type="button" data-set="es" aria-pressed="true">Español</button>
-      <button type="button" data-set="en" aria-pressed="false">English</button>
+      <button type="button" data-set="es" aria-pressed="true" aria-label="Español">ES</button>
+      <button type="button" data-set="en" aria-pressed="false" aria-label="English">EN</button>
     </nav>
+    <button type="button" class="menu-btn" aria-expanded="false" aria-controls="panel-menu"><span class="es">Menú</span><span class="en">Menu</span></button>
   </div>
 </header>
-
-<main>
-
-  <!-- ====================================================== PORTADA ====== -->
-  <section>
-    <div class="kicker">
-      <span class="pill es">Asociación civil</span>
-      <span class="pill en">Civil association</span>
-      <span class="meta">Buenos Aires, Argentina · 2026</span>
-    </div>
-
+  <div class="texto">
     <!-- El &nbsp; ata las dos últimas palabras para que nunca quede una sola colgando. -->
-    <h1 class="es">Ciencia ciudadana e imágenes de la naturaleza al servicio de quienes la&nbsp;protegen.</h1>
-    <h1 class="en">Citizen science and images of nature in the service of those who protect&nbsp;it.</h1>
+    <h1 class="es">Arte y tecnología al servicio de la&nbsp;conservación.</h1>
+    <h1 class="en">Art and technology in the service of&nbsp;conservation.</h1>
+  </div>
+  <a class="flecha" href="#quienes-somos" aria-label="Seguir leyendo"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 10 9 9 9-9"/></svg></a>
+</section>
+<!-- Panel del menú en celular (lo abre el botón "Menú"; sitio.js, bloque 5) -->
+<div class="panel-menu" id="panel-menu" hidden>
+  <button type="button" class="cerrar"><span class="es">Cerrar</span><span class="en">Close</span></button>
+  <nav aria-label="Secciones">
+      <a href="#quienes-somos"><span class="es">Quiénes somos</span><span class="en">About us</span></a>
+      <a href="#mision"><span class="es">Misión</span><span class="en">Mission</span></a>
+      <a href="#programas"><span class="es">Programas</span><span class="en">Programs</span></a>
+      <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
+  </nav>
+  <nav class="langs" aria-label="Idioma">
+    <button type="button" data-set="es" aria-pressed="true" aria-label="Español">ES</button>
+    <button type="button" data-set="en" aria-pressed="false" aria-label="English">EN</button>
+  </nav>
+</div>
 
-    <!-- FOTO DE PORTADA
-         El archivo portada.jpg tiene que estar en la misma carpeta que este index.html.
-         Para cambiarla: exportá otra foto horizontal en 2.35:1, guardala con el mismo
-         nombre y listo. -->
-    <div class="figure">
-      <img src="portada.jpg" alt="Una persona observa el mar con binoculares desde el borde de un acantilado en la costa patagónica" width="1920" height="817">
-    </div>
-  </section>
+<div class="wrap">
+<main>
 
   <!-- ==================================================== QUIÉNES SOMOS == -->
   <section id="quienes-somos">

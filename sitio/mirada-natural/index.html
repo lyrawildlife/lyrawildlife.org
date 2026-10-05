@@ -35,21 +35,39 @@
 </head>
 
 <body>
-<div class="wrap">
-
-<header>
-  <div class="bar">
-    <a class="marca" href="../" aria-label="Lyra Wildlife">
-      <svg viewBox="-25.5 0 983 251" role="img" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M0 25.5V175.5"/><path d="M92 75.5 38 225.5"/><path d="m26 75.5 30 100"/><path d="M122 75.5v100"/><path d="M122 121.5a46 46 0 0 1 46-46"/><path d="M296 125.5a50 50 0 1 0-100 0 50 50 0 1 0 100 0"/><path d="M296 75.5v100"/><path d="m368 75.5 28 100 28-100 28 100 28-100"/><path d="M514 75.5v100"/><path d="M546 25.5v150"/><path d="M678 125.5a50 50 0 1 0-100 0 50 50 0 1 0 100 0"/><path d="M678 25.5v150"/><path d="M710 25.5v150"/><path d="M742 75.5v100"/><path d="M774 175.5V69.5"/><path d="M774 69.5a44 44 0 0 1 44-44"/><path d="M760 75.5h46"/><path d="M932 125.5a50 50 0 1 0-10.6 30.78"/><path d="M832 125.5h100"/></g><g fill="currentColor"><circle cx="514" cy="40.5" r="6.82"/><circle cx="742" cy="40.5" r="6.82"/></g></svg>
-    </a>
+<header class="top">
+  <!-- Logotipo: versión reforzada del wordmark, en el color del texto. No lo reemplaces por texto. -->
+  <a class="marca" href="../" aria-label="Lyra Wildlife">
+    <svg viewBox="-25.5 0 983 251" role="img" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M0 25.5V175.5"/><path d="M92 75.5 38 225.5"/><path d="m26 75.5 30 100"/><path d="M122 75.5v100"/><path d="M122 121.5a46 46 0 0 1 46-46"/><path d="M296 125.5a50 50 0 1 0-100 0 50 50 0 1 0 100 0"/><path d="M296 75.5v100"/><path d="m368 75.5 28 100 28-100 28 100 28-100"/><path d="M514 75.5v100"/><path d="M546 25.5v150"/><path d="M678 125.5a50 50 0 1 0-100 0 50 50 0 1 0 100 0"/><path d="M678 25.5v150"/><path d="M710 25.5v150"/><path d="M742 75.5v100"/><path d="M774 175.5V69.5"/><path d="M774 69.5a44 44 0 0 1 44-44"/><path d="M760 75.5h46"/><path d="M932 125.5a50 50 0 1 0-10.6 30.78"/><path d="M832 125.5h100"/></g><g fill="currentColor"><circle cx="514" cy="40.5" r="6.82"/><circle cx="742" cy="40.5" r="6.82"/></g></svg>
+  </a>
+  <nav class="menu" aria-label="Secciones">
+      <a href="../#quienes-somos"><span class="es">Quiénes somos</span><span class="en">About us</span></a>
+      <a href="../#mision"><span class="es">Misión</span><span class="en">Mission</span></a>
+      <a href="../#programas"><span class="es">Programas</span><span class="en">Programs</span></a>
+      <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
+  </nav>
+  <div class="top-acciones">
     <nav class="langs" aria-label="Idioma">
-      <button type="button" data-set="es" aria-pressed="true">Español</button>
-      <button type="button" data-set="en" aria-pressed="false">English</button>
+      <button type="button" data-set="es" aria-pressed="true" aria-label="Español">ES</button>
+      <button type="button" data-set="en" aria-pressed="false" aria-label="English">EN</button>
     </nav>
+    <button type="button" class="menu-btn" aria-expanded="false" aria-controls="panel-menu"><span class="es">Menú</span><span class="en">Menu</span></button>
   </div>
 </header>
-
-</div><!-- /wrap: la portada del programa va a sangre -->
+<!-- Panel del menú en celular (lo abre el botón "Menú"; sitio.js, bloque 5) -->
+<div class="panel-menu" id="panel-menu" hidden>
+  <button type="button" class="cerrar"><span class="es">Cerrar</span><span class="en">Close</span></button>
+  <nav aria-label="Secciones">
+      <a href="../#quienes-somos"><span class="es">Quiénes somos</span><span class="en">About us</span></a>
+      <a href="../#mision"><span class="es">Misión</span><span class="en">Mission</span></a>
+      <a href="../#programas"><span class="es">Programas</span><span class="en">Programs</span></a>
+      <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
+  </nav>
+  <nav class="langs" aria-label="Idioma">
+    <button type="button" data-set="es" aria-pressed="true" aria-label="Español">ES</button>
+    <button type="button" data-set="en" aria-pressed="false" aria-label="English">EN</button>
+  </nav>
+</div>
 
 <!-- ======================================================= PORTADA ===== -->
 <div class="banda azul hero-programa" style="margin-top:calc(var(--u)*6)">
@@ -192,14 +210,14 @@
             <div class="datos en"><span>Backed by <a href="https://lyrafilms.org" target="_blank" rel="noopener">Lyra Films</a></span></div>
           </div>
         </div>
-        <div class="coleccion-img"><img src="../portada.jpg" alt="" width="1920" height="817" loading="lazy"></div>
+        <div class="coleccion-img"><img src="colecciones/_provisorias/costa.jpg" alt="" width="1920" height="817" loading="lazy"></div>
         <!-- Tira provisoria: reemplazar por seis miniaturas propias de la colección (400 × 400) y la cantidad real de fotos restantes. -->
         <div class="tira">
           <button type="button" data-grande="../programas/orca-explorer.jpg" aria-label="Ver foto 1"><img src="colecciones/_provisorias/m1.jpg" alt="" width="400" height="400" loading="lazy"></button>
-          <button type="button" data-grande="../portada.jpg" aria-label="Ver foto 2"><img src="colecciones/_provisorias/m2.jpg" alt="" width="400" height="400" loading="lazy"></button>
+          <button type="button" data-grande="colecciones/_provisorias/costa.jpg" aria-label="Ver foto 2"><img src="colecciones/_provisorias/m2.jpg" alt="" width="400" height="400" loading="lazy"></button>
           <button type="button" data-grande="../programas/mirada-natural.jpg" aria-label="Ver foto 3"><img src="colecciones/_provisorias/m3.jpg" alt="" width="400" height="400" loading="lazy"></button>
           <button type="button" data-grande="../programas/orca-explorer.jpg" aria-label="Ver foto 4"><img src="colecciones/_provisorias/m4.jpg" alt="" width="400" height="400" loading="lazy"></button>
-          <button type="button" data-grande="../portada.jpg" aria-label="Ver foto 5"><img src="colecciones/_provisorias/m5.jpg" alt="" width="400" height="400" loading="lazy"></button>
+          <button type="button" data-grande="colecciones/_provisorias/costa.jpg" aria-label="Ver foto 5"><img src="colecciones/_provisorias/m5.jpg" alt="" width="400" height="400" loading="lazy"></button>
           <button type="button" data-grande="../programas/mirada-natural.jpg" aria-label="Ver foto 6"><img src="colecciones/_provisorias/m6.jpg" alt="" width="400" height="400" loading="lazy"></button>
           <div class="resto" aria-hidden="true"><img src="colecciones/_provisorias/m7.jpg" alt="" width="400" height="400" loading="lazy"><span class="es">+ N fotos</span><span class="en">+ N photos</span></div>
         </div>

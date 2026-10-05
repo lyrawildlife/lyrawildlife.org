@@ -16,7 +16,7 @@ Hosting: Netlify, plan gratuito. DNS en Namecheap. Online desde el 05/09/2026.
 ## Reglas
 
 1. Las páginas son bilingües: cada texto está dos veces, con `class="es"` y `class="en"`. Se editan las dos.
-   Páginas: `index.html` (inicio), `orca-explorer/index.html` y `mirada-natural/index.html` (programas). Estilos en `estilos.css`; idioma y enlaces a formularios en `sitio.js`.
+   Páginas: `index.html` (inicio), `orca-explorer/index.html` y `mirada-natural/index.html` (programas). Estilos en `estilos.css`; idioma, enlaces a formularios, colecciones y menú de celular en `sitio.js`. La cabecera (`<header class="top">` + `<div class="panel-menu">`) es la misma en las cuatro páginas: si se agrega una sección al menú, se agrega en las cuatro, en el header y en el panel.
 2. El historial de versiones lo lleva GitHub (cada publicación es un commit). La carpeta `versiones/` queda solo como registro de lo anterior y no se sube.
 3. El documento de referencia en el proyecto de Claude (`claude/Lyra_Wildlife_Sitio_Web.md`) se actualiza con cada publicación.
 4. Nada se publica sin revisar antes una vista previa.
@@ -41,4 +41,5 @@ El plan gratuito bloquea los deploys de repositorios privados cuando quien hace 
 - Colecciones de Mirada Natural: cargada la real "Fauna de la Patagonia argentina" (124 fotos; se ven 7, por eso el "+ 117"). Queda provisoria "Costa patagónica" (Paisajes) con miniaturas de `_provisorias/`; reemplazarla y borrar esa carpeta. Para cada colección nueva: nombre, categoría, descripción, línea de impulsor (si lo tiene), siete fotos 2,35:1 (2560 × 1089, `g-*.jpg`) con sus miniaturas 400 × 400 (`m-*.jpg`) en `sitio/mirada-natural/colecciones/<coleccion>/`, y el total de fotos para el "+N" (total menos 7). Al tocar una miniatura se intercambia con la portada, así las siete quedan siempre a la vista.
 - Fotos de las portadas de programas en la home: `sitio/programas/orca-explorer.jpg` y `sitio/programas/mirada-natural.jpg` (ver `sitio/programas/LEEME.txt`).
 - Fotos para las páginas de programas: `sitio/orca-explorer/portada.jpg` y `sitio/mirada-natural/portada.jpg` (horizontal, 2.35:1).
+- Portada de inicio: `sitio/portada.jpg` es el buzo en el bosque de macroalgas a 1920 × 1280. Reemplazarla por una exportación de 3840 × 2560 (JPG, calidad 75) de la misma foto. Si se cambia por una foto oscura arriba, sacar la clase `cabecera-oscura` de la `<section class="hero">` para que la cabecera pase a pérola.
 - Logos de aliados: bloque comentado en `mirada-natural/index.html`, listo para activar.
