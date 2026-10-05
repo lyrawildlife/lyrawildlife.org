@@ -120,8 +120,12 @@
        descripción, línea de impulsor) + foto horizontal 2,35:1 (2560 × 1089 px,
        en mirada-natural/colecciones/). La línea chica lleva solo el impulsor
        ("Con el impulso de X"); si la colección no tiene, se borra el <div class="datos">.
-       Bajo la foto va la tira: seis miniaturas 400 × 400 (al tocarlas cambian la portada,
-       data-grande = la foto grande) y una séptima desenfocada con "+N fotos".
+       Bajo la foto va la tira: seis miniaturas 400 × 400 y una séptima desenfocada
+       con "+N fotos" (N = total de la colección menos las 7 que se ven). Al tocar una
+       miniatura, su foto (data-grande) pasa a la portada y la portada anterior ocupa
+       su lugar en la tira; para eso la portada lleva data-mini = su propia miniatura.
+       Archivos por colección en mirada-natural/colecciones/<nombre>/: g-*.jpg (2560 × 1089)
+       y m-*.jpg (400 × 400).
        Para una categoría sin colecciones, dejá solo el <p class="fila-vacia">. -->
   </main>
   </div><!-- /wrap: la sección de colecciones es ancha -->
@@ -150,52 +154,24 @@
             <button type="button" class="sig" aria-label="Colección siguiente"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 3 6 6-6 6"/></svg></button>
           </div>
           <div class="texto">
-            <h3 class="es">Orcas de Península Valdés</h3>
-            <h3 class="en">Orcas of Península Valdés</h3>
-            <p class="es">Vistas aéreas y de costa de la población de orcas del golfo, con individuos identificados en Orca Explorer.</p>
-            <p class="en">Aerial and shore views of the gulf's orca population, with individuals identified in Orca Explorer.</p>
+            <h3 class="es">Fauna de la Patagonia argentina</h3>
+            <h3 class="en">Wildlife of Argentine Patagonia</h3>
+            <p class="es">Ballenas, toninas overas, pingüinos, elefantes marinos, flamencos y aves costeras de la Patagonia argentina, fotografiados en libertad en sus ambientes naturales.</p>
+            <p class="en">Whales, Commerson's dolphins, penguins, elephant seals, flamingos and shorebirds of Argentine Patagonia, photographed in the wild in their natural habitats.</p>
             <div class="datos es"><span>Con el impulso de <a href="https://lyrafilms.org" target="_blank" rel="noopener">Lyra Films</a></span></div>
             <div class="datos en"><span>Backed by <a href="https://lyrafilms.org" target="_blank" rel="noopener">Lyra Films</a></span></div>
           </div>
         </div>
-        <div class="coleccion-img"><img src="../programas/orca-explorer.jpg" alt="" width="2560" height="1089" loading="lazy"></div>
-        <!-- Tira provisoria: reemplazar por seis miniaturas propias de la colección (400 × 400) y la cantidad real de fotos restantes. -->
+        <div class="coleccion-img"><img src="colecciones/fauna-patagonia/g-pinguinos.jpg" data-mini="colecciones/fauna-patagonia/m-pinguinos.jpg" alt="" width="2560" height="1089" loading="lazy"></div>
         <div class="tira">
-          <button type="button" data-grande="../programas/orca-explorer.jpg" aria-label="Ver foto 1"><img src="colecciones/_provisorias/m1.jpg" alt="" width="400" height="400" loading="lazy"></button>
-          <button type="button" data-grande="../portada.jpg" aria-label="Ver foto 2"><img src="colecciones/_provisorias/m2.jpg" alt="" width="400" height="400" loading="lazy"></button>
-          <button type="button" data-grande="../programas/mirada-natural.jpg" aria-label="Ver foto 3"><img src="colecciones/_provisorias/m3.jpg" alt="" width="400" height="400" loading="lazy"></button>
-          <button type="button" data-grande="../programas/orca-explorer.jpg" aria-label="Ver foto 4"><img src="colecciones/_provisorias/m4.jpg" alt="" width="400" height="400" loading="lazy"></button>
-          <button type="button" data-grande="../portada.jpg" aria-label="Ver foto 5"><img src="colecciones/_provisorias/m5.jpg" alt="" width="400" height="400" loading="lazy"></button>
-          <button type="button" data-grande="../programas/mirada-natural.jpg" aria-label="Ver foto 6"><img src="colecciones/_provisorias/m6.jpg" alt="" width="400" height="400" loading="lazy"></button>
-          <div class="resto" aria-hidden="true"><img src="colecciones/_provisorias/m7.jpg" alt="" width="400" height="400" loading="lazy"><span class="es">+ N fotos</span><span class="en">+ N photos</span></div>
-        </div>
-      </article>
-
-      <article class="coleccion">
-        <div class="ficha">
-          <div class="flechas">
-            <button type="button" class="ant" aria-label="Colección anterior"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3 5 9l6 6"/></svg></button>
-            <button type="button" class="sig" aria-label="Colección siguiente"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 3 6 6-6 6"/></svg></button>
-          </div>
-          <div class="texto">
-            <h3 class="es">Vida intermareal</h3>
-            <h3 class="en">Intertidal life</h3>
-            <p class="es">Peces, invertebrados y algas de las restingas patagónicas, fotografiados en marea baja y bajo el agua.</p>
-            <p class="en">Fish, invertebrates and algae of the Patagonian rocky shores, photographed at low tide and underwater.</p>
-            <div class="datos es"><span>Con el impulso de <a href="https://lyrafilms.org" target="_blank" rel="noopener">Lyra Films</a></span></div>
-            <div class="datos en"><span>Backed by <a href="https://lyrafilms.org" target="_blank" rel="noopener">Lyra Films</a></span></div>
-          </div>
-        </div>
-        <div class="coleccion-img"><img src="../programas/mirada-natural.jpg" alt="" width="2560" height="1089" loading="lazy"></div>
-        <!-- Tira provisoria: reemplazar por seis miniaturas propias de la colección (400 × 400) y la cantidad real de fotos restantes. -->
-        <div class="tira">
-          <button type="button" data-grande="../programas/orca-explorer.jpg" aria-label="Ver foto 1"><img src="colecciones/_provisorias/m1.jpg" alt="" width="400" height="400" loading="lazy"></button>
-          <button type="button" data-grande="../portada.jpg" aria-label="Ver foto 2"><img src="colecciones/_provisorias/m2.jpg" alt="" width="400" height="400" loading="lazy"></button>
-          <button type="button" data-grande="../programas/mirada-natural.jpg" aria-label="Ver foto 3"><img src="colecciones/_provisorias/m3.jpg" alt="" width="400" height="400" loading="lazy"></button>
-          <button type="button" data-grande="../programas/orca-explorer.jpg" aria-label="Ver foto 4"><img src="colecciones/_provisorias/m4.jpg" alt="" width="400" height="400" loading="lazy"></button>
-          <button type="button" data-grande="../portada.jpg" aria-label="Ver foto 5"><img src="colecciones/_provisorias/m5.jpg" alt="" width="400" height="400" loading="lazy"></button>
-          <button type="button" data-grande="../programas/mirada-natural.jpg" aria-label="Ver foto 6"><img src="colecciones/_provisorias/m6.jpg" alt="" width="400" height="400" loading="lazy"></button>
-          <div class="resto" aria-hidden="true"><img src="colecciones/_provisorias/m7.jpg" alt="" width="400" height="400" loading="lazy"><span class="es">+ N fotos</span><span class="en">+ N photos</span></div>
+          <button type="button" data-grande="colecciones/fauna-patagonia/g-flamenco.jpg" aria-label="Ver foto"><img src="colecciones/fauna-patagonia/m-flamenco.jpg" alt="" width="400" height="400" loading="lazy"></button>
+          <button type="button" data-grande="colecciones/fauna-patagonia/g-toninas.jpg" aria-label="Ver foto"><img src="colecciones/fauna-patagonia/m-toninas.jpg" alt="" width="400" height="400" loading="lazy"></button>
+          <button type="button" data-grande="colecciones/fauna-patagonia/g-ballena-aerea.jpg" aria-label="Ver foto"><img src="colecciones/fauna-patagonia/m-ballena-aerea.jpg" alt="" width="400" height="400" loading="lazy"></button>
+          <button type="button" data-grande="colecciones/fauna-patagonia/g-chorlito.jpg" aria-label="Ver foto"><img src="colecciones/fauna-patagonia/m-chorlito.jpg" alt="" width="400" height="400" loading="lazy"></button>
+          <button type="button" data-grande="colecciones/fauna-patagonia/g-ballena-sub.jpg" aria-label="Ver foto"><img src="colecciones/fauna-patagonia/m-ballena-sub.jpg" alt="" width="400" height="400" loading="lazy"></button>
+          <button type="button" data-grande="colecciones/fauna-patagonia/g-elefantes.jpg" aria-label="Ver foto"><img src="colecciones/fauna-patagonia/m-elefantes.jpg" alt="" width="400" height="400" loading="lazy"></button>
+          <!-- La colección tiene 124 fotos; 7 se ven acá, así que el resto es 117. Actualizar si cambia el total. -->
+          <div class="resto" aria-hidden="true"><img src="colecciones/fauna-patagonia/m-pinguinos.jpg" alt="" width="400" height="400" loading="lazy"><span class="es">+ 117 fotos</span><span class="en">+ 117 photos</span></div>
         </div>
       </article>
     </div>

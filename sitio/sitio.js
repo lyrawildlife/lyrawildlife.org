@@ -90,17 +90,29 @@ var FORMULARIOS = {
   });
 })();
 
-/* 4. Tira de miniaturas: al tocar una, pasa a ser la portada de la colección. */
+/* 4. Tira de miniaturas: al tocar una, su foto pasa a ser la portada y la portada
+      anterior ocupa su lugar en la tira (así las siete fotos quedan siempre a la vista).
+      Para eso la portada lleva data-mini con su propia miniatura; si no lo tiene,
+      la miniatura simplemente reemplaza la portada. */
 (function () {
   document.querySelectorAll('.tira button[data-grande]').forEach(function (b) {
     b.addEventListener('click', function () {
       var col = b.closest('.coleccion');
       var hero = col.querySelector('.coleccion-img img');
+      var mini = b.querySelector('img');
       if (!hero || hero.getAttribute('src') === b.dataset.grande) return;
+      var grandeAnterior = hero.getAttribute('src');
+      var miniAnterior = hero.dataset.mini;
       hero.style.opacity = 0;
-      setTimeout(function () { hero.src = b.dataset.grande; hero.style.opacity = 1; }, 180);
-      col.querySelectorAll('.tira button').forEach(function (x) { x.removeAttribute('aria-current'); });
-      b.setAttribute('aria-current', 'true');
+      setTimeout(function () {
+        hero.src = b.dataset.grande;
+        if (miniAnterior && mini) {
+          hero.dataset.mini = mini.getAttribute('src');
+          mini.src = miniAnterior;
+          b.dataset.grande = grandeAnterior;
+        }
+        hero.style.opacity = 1;
+      }, 180);
     });
   });
 })();
