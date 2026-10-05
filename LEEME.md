@@ -18,9 +18,10 @@ Hosting: Netlify, plan gratuito. DNS en Namecheap. Online desde el 05/09/2026.
 1. Las páginas son bilingües: cada texto está dos veces, con `class="es"` y `class="en"`. Se editan las dos.
    Páginas: `index.html` (inicio), `orca-explorer/index.html` y `mirada-natural/index.html` (programas). Estilos en `estilos.css`; idioma y enlaces a formularios en `sitio.js`.
 2. El historial de versiones lo lleva GitHub (cada publicación es un commit). La carpeta `versiones/` queda solo como registro de lo anterior y no se sube.
-3. La copia de referencia en el proyecto de Claude (`claude/lyrawildlife_org_index.html`) se actualiza con cada publicación.
+3. El documento de referencia en el proyecto de Claude (`claude/Lyra_Wildlife_Sitio_Web.md`) se actualiza con cada publicación.
 4. Nada se publica sin revisar antes una vista previa.
 5. Armonía. Antes de cada commit: (a) todo título y párrafo arranca en la columna de texto (`--col`); solo fotos, portadas y bandas usan el bloque ancho (`--ancho`); (b) correr `material/herramientas/revisar.py` (alineación y desbordes en 4 páginas × 3 anchos); (c) releer los textos nuevos contra los existentes: mismo tono, mismos términos (aliados, impulsores, Banco de Imágenes de la Naturaleza) y sin contradecir reglas ya publicadas (acceso al banco solo con convenio, convenio no público, sin cifras no verificadas).
+6. Imágenes. Cada imagen que Claude escribe en la Mac llega con un manifiesto C2PA ("Content Credentials") firmado por Anthropic que dice que Claude pudo haber creado o modificado el archivo. Son fotos reales, así que se quita antes del commit: `python3 material/herramientas/quitar-c2pa.py sitio` (deja el archivo byte a byte como el original). Si una imagen no pasó por Claude (la copió Kevin), no trae nada.
 
 ## Cómo publicar
 
