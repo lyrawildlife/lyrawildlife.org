@@ -89,3 +89,18 @@ var FORMULARIOS = {
     });
   });
 })();
+
+/* 4. Tira de miniaturas: al tocar una, pasa a ser la portada de la colección. */
+(function () {
+  document.querySelectorAll('.tira button[data-grande]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var col = b.closest('.coleccion');
+      var hero = col.querySelector('.coleccion-img img');
+      if (!hero || hero.getAttribute('src') === b.dataset.grande) return;
+      hero.style.opacity = 0;
+      setTimeout(function () { hero.src = b.dataset.grande; hero.style.opacity = 1; }, 180);
+      col.querySelectorAll('.tira button').forEach(function (x) { x.removeAttribute('aria-current'); });
+      b.setAttribute('aria-current', 'true');
+    });
+  });
+})();

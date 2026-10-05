@@ -331,8 +331,9 @@ footer a{color:inherit;border-bottom-color:var(--linea)}
 footer a:hover{color:var(--terracota)}
 
 /* ---- Idiomas ------------------------------------------------------------- */
-html[data-lang="es"] .en{display:none}
-html[data-lang="en"] .es{display:none}
+/* El idioma oculto nunca se muestra, gane quien gane en especificidad. */
+html[data-lang="es"] .en{display:none !important}
+html[data-lang="en"] .es{display:none !important}
 
 /* ---- Colecciones del banco (Mirada Natural) ------------------------------ */
 .colecciones{
@@ -407,6 +408,28 @@ html[data-lang="en"] .es{display:none}
 }
 .coleccion-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 @media (min-width:1300px){.coleccion-img{margin:0}}
+
+/* Tira de miniaturas bajo la foto de la colección: seis fotos que cambian la
+   portada al tocarlas, y una última desenfocada con "+N fotos" (no clickeable). */
+.tira{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:6px calc(var(--u)*3) 0}
+.tira button,.tira .resto{
+  position:relative;aspect-ratio:1;border-radius:8px;overflow:hidden;
+  padding:0;border:0;background:var(--beige);display:block;width:100%;
+}
+.tira button{cursor:pointer}
+.tira img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85;transition:opacity .25s ease}
+.tira button:hover img,.tira button[aria-current="true"] img{opacity:1}
+.tira .resto img{filter:blur(6px);transform:scale(1.1);opacity:1}
+.tira .resto span{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:rgba(63,82,90,.45);color:var(--perola);
+  font-family:var(--sans);font-weight:500;font-size:14px;letter-spacing:.04em;text-align:center;padding:4px;
+}
+@media (min-width:1300px){.tira{margin:6px 0 0}}
+@media (max-width:620px){
+  .tira{grid-template-columns:repeat(4,1fr)}
+  .tira button:nth-child(n+4){display:none}   /* en celular: tres fotos y el "+N" */
+}
 
 /* ---- Formulario ---------------------------------------------------------- */
 .formulario{margin-top:calc(var(--u)*3)}
