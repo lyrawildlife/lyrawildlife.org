@@ -403,9 +403,8 @@ html[data-lang="en"] .es{display:none !important}
   border-top:1px solid var(--linea);
 }
 .colecciones + .wrap > main > section:first-child{border-top:1px solid var(--linea)}
-/* La cabecera (rótulo, título, intro y categorías) y la ficha de cada colección
-   van en la misma columna que el resto del texto del sitio; solo la foto usa el
-   bloque ancho. */
+/* La cabecera (rótulo, título e intro) va en la misma columna que el resto del
+   texto del sitio; solo la grilla de tarjetas usa el bloque ancho. */
 .colecciones .cabecera{
   max-width:var(--col);
   margin:0 auto calc(var(--u)*4);
@@ -415,81 +414,26 @@ html[data-lang="en"] .es{display:none !important}
 .colecciones .cabecera p{margin:0 0 calc(var(--u)*2)}
 .colecciones .cabecera p.eyebrow{margin-bottom:calc(var(--u)*2)}
 
-/* Selector de categorías: una sola pastilla con las opciones adentro */
-.categorias{
-  display:flex;
-  margin-top:calc(var(--u)*3);
-  border:1px solid rgba(63,82,90,.35);
-  border-radius:999px;
-  padding:4px;
+/* Grilla de tarjetas verticales: tres por fila, 9:16, sin enlace */
+.grilla{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0 calc(var(--u)*3)}
+.tarjeta{
+  position:relative;display:block;aspect-ratio:9/16;border-radius:12px;overflow:hidden;
+  background:var(--azul-profundo);color:var(--perola);margin:0;
 }
-.categorias button{
-  flex:1 1 auto;
-  font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.02em;white-space:nowrap;
-  padding:10px 14px;border-radius:999px;cursor:pointer;
-  background:none;border:0;color:var(--texto-sec);
-  transition:background .25s ease,color .25s ease;
+.tarjeta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.tarjeta::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(63,82,90,.38) 0%,rgba(63,82,90,0) 24%,rgba(63,82,90,0) 56%,rgba(63,82,90,.74) 100%)}
+.tarjeta-cat{
+  position:absolute;top:18px;left:18px;z-index:1;display:flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
 }
-.categorias button[aria-selected="true"]{background:var(--azul-profundo);color:var(--perola)}
-.categorias button:hover{color:var(--azul-profundo)}
-.categorias button[aria-selected="true"]:hover{color:var(--perola)}
-
-/* Un carrusel por categoría; una colección visible por vez */
-.carrusel{display:none}
-.carrusel[data-activa]{display:block}
-.coleccion{display:none}
-.coleccion[data-activa]{display:block}
-.fila-vacia{max-width:var(--col);margin:0 auto;padding:calc(var(--u)*2) calc(var(--u)*3);color:var(--texto-terc);font-size:15px}
-
-.ficha{
-  max-width:var(--col);margin:0 auto calc(var(--u)*3);padding:0 calc(var(--u)*3);
-  display:grid;grid-template-columns:auto 1fr;gap:calc(var(--u)*3);align-items:start;
-}
-.flechas{display:flex;gap:calc(var(--u)*1);padding-top:4px}
-.flechas button{
-  width:44px;height:44px;border-radius:999px;cursor:pointer;padding:0;
-  border:1px solid var(--azul-profundo);background:none;color:var(--azul-profundo);
-  display:grid;place-items:center;transition:background .25s ease,color .25s ease;
-}
-.flechas button:hover{background:var(--azul-profundo);color:var(--perola)}
-.flechas button svg{width:18px;height:18px}
-.carrusel[data-unica] .flechas{visibility:hidden}   /* una sola colección: sin flechas */
-.ficha .texto h3{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.01em;margin:0 0 calc(var(--u)*1)}
-.ficha .texto p{color:var(--texto-sec);margin:0 0 calc(var(--u)*1.5);max-width:52ch}
-.ficha .datos{display:flex;flex-wrap:wrap;gap:calc(var(--u)*1) calc(var(--u)*3);font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--texto-terc)}
-.ficha .datos a{color:inherit;border-bottom-color:var(--linea)}
-.ficha .datos a:hover{color:var(--terracota)}
-
-/* Foto: bloque ancho, 2,35:1, esquinas redondeadas siempre (nunca va a sangre) */
-.coleccion-img{
-  position:relative;aspect-ratio:2.35/1;overflow:hidden;
-  background:var(--azul-profundo);border-radius:12px;
-  margin:0 calc(var(--u)*3);
-}
-.coleccion-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity .18s ease}
-@media (min-width:1300px){.coleccion-img{margin:0}}
-
-/* Tira de miniaturas bajo la foto de la colección: seis fotos que se intercambian
-   con la portada al tocarlas, y una última desenfocada con "+N fotos" (no clickeable). */
-.tira{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:6px calc(var(--u)*3) 0}
-.tira button,.tira .resto{
-  position:relative;aspect-ratio:1;border-radius:8px;overflow:hidden;
-  padding:0;border:0;background:var(--beige);display:block;width:100%;
-}
-.tira button{cursor:pointer}
-.tira img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85;transition:opacity .25s ease}
-.tira button:hover img{opacity:1}
-.tira .resto img{filter:blur(6px);transform:scale(1.1);opacity:1}
-.tira .resto span{
-  position:absolute;inset:0;display:grid;place-items:center;
-  background:rgba(63,82,90,.45);color:var(--perola);
-  font-family:var(--sans);font-weight:500;font-size:14px;letter-spacing:.04em;text-align:center;padding:4px;
-}
-@media (min-width:1300px){.tira{margin:6px 0 0}}
-@media (max-width:620px){
-  .tira{grid-template-columns:repeat(4,1fr)}
-  .tira button:nth-child(n+4){display:none}   /* en celular: tres fotos y el "+N" */
-}
+.tarjeta-cat::before{content:"";width:6px;height:6px;background:currentColor}
+.tarjeta-texto{position:absolute;left:18px;right:18px;bottom:18px;z-index:1;display:flex;flex-direction:column;gap:6px}
+.tarjeta-titulo{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(20px,1.9vw,26px);line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
+.tarjeta-sub{display:block;font-family:var(--sans);font-size:13px;line-height:1.45;opacity:.88}
+.ver-todas{max-width:var(--col);margin:calc(var(--u)*5) auto 0;padding:0 calc(var(--u)*3);text-align:center}
+@media (min-width:1300px){.grilla{margin:0}}
+@media (max-width:900px){.grilla{grid-template-columns:repeat(2,1fr);gap:12px}}
+@media (max-width:620px){.grilla{grid-template-columns:1fr}}
 
 /* ---- Formulario ---------------------------------------------------------- */
 .formulario{margin-top:calc(var(--u)*3)}
@@ -506,15 +450,7 @@ html[data-lang="en"] .es{display:none !important}
 .formulario textarea{resize:vertical;min-height:88px}
 .formulario .btn{cursor:pointer}
 
-@media (max-width:900px){
-  .categorias{flex-wrap:wrap;border:0;padding:0;gap:calc(var(--u)*1)}
-  .categorias button{flex:0 0 auto;border:1px solid var(--linea)}
-  .categorias button[aria-selected="true"]{border-color:var(--azul-profundo)}
-}
 @media (max-width:620px){
-  .ficha{grid-template-columns:1fr}
-  .flechas{order:2}
-  .carrusel[data-unica] .flechas{display:none}   /* en celular las flechas van en su propia fila: si no hay, no dejan hueco */
   .formulario .campos{grid-template-columns:1fr}
 }
 

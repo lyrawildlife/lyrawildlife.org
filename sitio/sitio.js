@@ -51,73 +51,7 @@ var FORMULARIOS = {
   });
 })();
 
-/* 3. Colecciones de Mirada Natural: pestañas de categoría y flechas para recorrer
-      las colecciones de la categoría activa. */
-(function () {
-  var tabs = document.querySelectorAll('.categorias button');
-  var carruseles = document.querySelectorAll('.carrusel');
-  if (!tabs.length) return;
-
-  function mostrar(carrusel, indice) {
-    var items = carrusel.querySelectorAll('.coleccion');
-    items.forEach(function (it, i) {
-      if (i === indice) it.setAttribute('data-activa', ''); else it.removeAttribute('data-activa');
-    });
-  }
-
-  carruseles.forEach(function (c) {
-    var items = c.querySelectorAll('.coleccion');
-    if (items.length <= 1) c.setAttribute('data-unica', '');
-    c.querySelectorAll('.flechas button').forEach(function (b) {
-      b.addEventListener('click', function () {
-        var actual = Array.prototype.indexOf.call(items, c.querySelector('.coleccion[data-activa]'));
-        var n = items.length;
-        var siguiente = b.classList.contains('sig') ? (actual + 1) % n : (actual - 1 + n) % n;
-        mostrar(c, siguiente);
-      });
-    });
-  });
-
-  tabs.forEach(function (b) {
-    b.addEventListener('click', function () {
-      tabs.forEach(function (x) { x.setAttribute('aria-selected', 'false'); });
-      b.setAttribute('aria-selected', 'true');
-      carruseles.forEach(function (c) {
-        if (c.dataset.cat === b.dataset.cat) { c.setAttribute('data-activa', ''); mostrar(c, 0); }
-        else c.removeAttribute('data-activa');
-      });
-    });
-  });
-})();
-
-/* 4. Tira de miniaturas: al tocar una, su foto pasa a ser la portada y la portada
-      anterior ocupa su lugar en la tira (así las siete fotos quedan siempre a la vista).
-      Para eso la portada lleva data-mini con su propia miniatura; si no lo tiene,
-      la miniatura simplemente reemplaza la portada. */
-(function () {
-  document.querySelectorAll('.tira button[data-grande]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var col = b.closest('.coleccion');
-      var hero = col.querySelector('.coleccion-img img');
-      var mini = b.querySelector('img');
-      if (!hero || hero.getAttribute('src') === b.dataset.grande) return;
-      var grandeAnterior = hero.getAttribute('src');
-      var miniAnterior = hero.dataset.mini;
-      hero.style.opacity = 0;
-      setTimeout(function () {
-        hero.src = b.dataset.grande;
-        if (miniAnterior && mini) {
-          hero.dataset.mini = mini.getAttribute('src');
-          mini.src = miniAnterior;
-          b.dataset.grande = grandeAnterior;
-        }
-        hero.style.opacity = 1;
-      }, 180);
-    });
-  });
-})();
-
-/* 5. Menú en celular: el botón "Menú" abre el panel con las secciones; se cierra
+/* 3. Menú en celular: el botón "Menú" abre el panel con las secciones; se cierra
       con "Cerrar", al elegir una sección o con Escape. */
 (function () {
   var btn = document.querySelector('.menu-btn');
