@@ -427,13 +427,19 @@ html[data-lang="en"] .es{display:none !important}
   font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
 }
 .tarjeta-cat::before{content:"";width:6px;height:6px;background:currentColor}
+/* El subtítulo reserva dos líneas fijas, así los títulos quedan alineados entre tarjetas (crecen hacia arriba si ocupan dos líneas). */
 .tarjeta-texto{position:absolute;left:18px;right:18px;bottom:18px;z-index:1;display:flex;flex-direction:column;gap:6px}
-.tarjeta-titulo{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(20px,1.9vw,26px);line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
-.tarjeta-sub{display:block;font-family:var(--sans);font-size:13px;line-height:1.45;opacity:.88}
+.tarjeta-titulo{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(20px,1.9vw,26px);line-height:1.15;letter-spacing:-.01em}
+.tarjeta-sub{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-family:var(--sans);font-size:13px;line-height:1.45;min-height:2.9em;opacity:.88}
 .ver-todas{max-width:var(--col);margin:calc(var(--u)*5) auto 0;padding:0 calc(var(--u)*3);text-align:center}
 @media (min-width:1300px){.grilla{margin:0}}
 @media (max-width:900px){.grilla{grid-template-columns:repeat(2,1fr);gap:12px}}
-@media (max-width:620px){.grilla{grid-template-columns:1fr}}
+/* Celular: las tarjetas se deslizan de costado, una por vez, con la siguiente asomando */
+@media (max-width:620px){
+  .grilla{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:24px;gap:12px;margin:0;padding:0 24px 4px;scrollbar-width:none}
+  .grilla::-webkit-scrollbar{display:none}
+  .tarjeta{flex:0 0 76%;scroll-snap-align:start}
+}
 
 /* ---- Formulario ---------------------------------------------------------- */
 .formulario{margin-top:calc(var(--u)*3)}
