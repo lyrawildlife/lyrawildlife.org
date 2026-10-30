@@ -93,10 +93,10 @@ html.menu-abierto{overflow:hidden}
 
 /* ---- Portada a pantalla completa (inicio) --------------------------------- */
 .hero{position:relative;width:100%;height:100vh;height:100svh;min-height:600px;padding:0;border-top:0;overflow:hidden;color:var(--perola);display:flex;flex-direction:column}   /* padding:0 anula el de section */
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;z-index:0}
 /* Velo: arriba para la cabecera clara, abajo para el titular y la flecha */
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(63,82,90,.6) 0%,rgba(63,82,90,0) 34%,rgba(63,82,90,0) 55%,rgba(63,82,90,.50) 100%)}
-.hero > *{position:relative;z-index:1}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(63,82,90,.6) 0%,rgba(63,82,90,0) 34%,rgba(63,82,90,0) 55%,rgba(63,82,90,.50) 100%)}
+.hero .top,.hero .texto{position:relative;z-index:2}   /* por encima de la foto (0) y del velo (1) */
 .hero .top{color:var(--perola)}
 /* Variante para fotos claras arriba: cabecera en azul profundo y sin velo superior */
 .hero.cabecera-oscura::before{background:linear-gradient(to bottom,rgba(63,82,90,0) 0%,rgba(63,82,90,0) 55%,rgba(63,82,90,.55) 100%)}
@@ -106,7 +106,7 @@ html.menu-abierto{overflow:hidden}
 .hero h1{font-size:clamp(42px,6.2vw,124px);line-height:1.02;margin:0;max-width:17ch;color:var(--perola)}
 
 /* Flecha: la página sigue. Movimiento leve, de 6 px, y quieta si el sistema pide menos animación. */
-.flecha{position:absolute;left:50%;bottom:26px;z-index:1;color:var(--perola);opacity:.85;border:0;line-height:0;transform:translateX(-50%);animation:bajar 3s ease-in-out infinite}
+.flecha{position:absolute;left:50%;bottom:26px;z-index:2;color:var(--perola);opacity:.85;border:0;line-height:0;transform:translateX(-50%);animation:bajar 3s ease-in-out infinite}
 .flecha svg{width:26px;height:26px}
 @keyframes bajar{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,6px)}}
 @media (prefers-reduced-motion:reduce){.flecha{animation:none}}
@@ -118,6 +118,7 @@ html.menu-abierto{overflow:hidden}
   .menu-btn{display:inline}
   .top-acciones{gap:18px}
   .hero .texto{padding:0 24px 84px}
+  .hero-programa .texto{padding:0 24px 28px}
 }
 
 /* ---- Kicker de dos partes ------------------------------------------------ */
@@ -207,9 +208,13 @@ section:first-of-type{border-top:0}
 .banda.azul .pill{background:var(--azul-profundo);color:var(--perola)}
 
 /* Portada de programa: solo el nombre, grande, en pérola sobre azul. */
-.hero-programa{padding:calc(var(--u)*7) 0 calc(var(--u)*6)}
-.hero-programa .kicker{margin:0 0 calc(var(--u)*3)}
-.hero-programa h1{color:var(--perola);margin:0}
+/* Portada de programa: como la del inicio, pero de un tercio de pantalla (ver .hero) */
+.hero.hero-programa{height:36vh;height:36svh;min-height:300px;max-height:560px}
+.hero-programa .texto{padding-bottom:clamp(24px,4vh,44px)}
+.hero-programa.cabecera-oscura::before{background:linear-gradient(to bottom,rgba(63,82,90,0) 0%,rgba(63,82,90,.12) 30%,rgba(63,82,90,.6) 62%,rgba(63,82,90,.9) 100%)}   /* portada baja: velo más firme para el título */
+.hero-programa .kicker{margin:0 0 calc(var(--u)*1.5)}
+.hero-programa .pill{background:var(--azul-profundo);color:var(--perola)}
+.hero-programa h1.nombre{font-size:clamp(40px,5.5vw,76px);line-height:1;max-width:none}
 
 /* ---- Foto a sangre -------------------------------------------------------- */
 .figure{

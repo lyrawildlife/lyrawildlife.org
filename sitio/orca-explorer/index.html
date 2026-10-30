@@ -35,6 +35,13 @@
 </head>
 
 <body>
+<!-- ======================================================= PORTADA =====
+     Como la del inicio, pero de un tercio de pantalla. La foto es portada.jpg en esta
+     carpeta (horizontal, 2560 × 1440). Si la foto es clara arriba, la cabecera va
+     en azul profundo (clase cabecera-oscura); si es oscura, sacá esa clase. -->
+<section class="hero hero-programa cabecera-oscura">
+  <!-- object-position: muestra la franja alta de la foto, donde están las orcas, debajo del menú. -->
+  <img src="portada.jpg" alt="Dos orcas vistas desde el aire en aguas turquesas" width="2560" height="1440" fetchpriority="high" style="object-position:50% 22%">
 <header class="top">
   <!-- Logotipo: versión reforzada del wordmark, en el color del texto. No lo reemplaces por texto. -->
   <a class="marca" href="../" aria-label="Lyra Wildlife">
@@ -53,6 +60,14 @@
     <button type="button" class="menu-btn" aria-expanded="false" aria-controls="panel-menu"><span class="es">Menú</span><span class="en">Menu</span></button>
   </div>
 </header>
+  <div class="texto">
+    <div class="kicker">
+      <span class="pill es">Programa principal de Lyra Wildlife</span>
+      <span class="pill en">Lyra Wildlife's main programme</span>
+    </div>
+    <h1 class="nombre">Orca Explorer</h1>
+  </div>
+</section>
 <!-- Panel del menú en celular (lo abre el botón "Menú"; sitio.js, bloque 5) -->
 <div class="panel-menu" id="panel-menu" hidden>
   <button type="button" class="cerrar"><span class="es">Cerrar</span><span class="en">Close</span></button>
@@ -65,17 +80,6 @@
     <button type="button" data-set="es" aria-pressed="true" aria-label="Español">ES</button>
     <button type="button" data-set="en" aria-pressed="false" aria-label="English">EN</button>
   </nav>
-</div>
-
-<!-- ======================================================= PORTADA ===== -->
-<div class="banda azul hero-programa" style="margin-top:calc(var(--u)*6)">
-  <div class="inner">
-    <div class="kicker">
-      <span class="pill es">Programa principal de Lyra Wildlife</span>
-      <span class="pill en">Lyra Wildlife's main programme</span>
-    </div>
-    <h1 class="nombre">Orca Explorer</h1>
-  </div>
 </div>
 
 <div class="wrap">
@@ -99,12 +103,6 @@
       <a class="btn en" href="https://orcaexplorer.com/blog" target="_blank" rel="noopener">Read the blog</a>
     </div>
 
-    <!-- FOTO DEL PROGRAMA
-         Guardá una foto horizontal en 2.35:1 como portada.jpg dentro de esta carpeta
-         (orca-explorer/). Mientras no exista, el bloque se oculta solo. -->
-    <div class="figure">
-      <img src="portada.jpg" alt="" width="1920" height="817" onerror="this.closest('.figure').remove()">
-    </div>
   </section>
 
   <!-- =================================================== CÓMO FUNCIONA == -->

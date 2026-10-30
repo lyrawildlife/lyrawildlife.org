@@ -35,6 +35,12 @@
 </head>
 
 <body>
+<!-- ======================================================= PORTADA =====
+     Como la del inicio, pero de un tercio de pantalla. La foto es portada.jpg en esta
+     carpeta (horizontal, 2560 × 1440). Si la foto es clara arriba, la cabecera va
+     en azul profundo (clase cabecera-oscura); si es oscura, sacá esa clase. -->
+<section class="hero hero-programa cabecera-oscura">
+  <img src="portada.jpg" alt="Dos crías de elefante marino apoyan sus cabezas una contra la otra" width="2560" height="1440" fetchpriority="high">
 <header class="top">
   <!-- Logotipo: versión reforzada del wordmark, en el color del texto. No lo reemplaces por texto. -->
   <a class="marca" href="../" aria-label="Lyra Wildlife">
@@ -53,6 +59,14 @@
     <button type="button" class="menu-btn" aria-expanded="false" aria-controls="panel-menu"><span class="es">Menú</span><span class="en">Menu</span></button>
   </div>
 </header>
+  <div class="texto">
+    <div class="kicker">
+      <span class="pill es">Programa de Lyra Wildlife</span>
+      <span class="pill en">A Lyra Wildlife programme</span>
+    </div>
+    <h1 class="nombre">Mirada Natural</h1>
+  </div>
+</section>
 <!-- Panel del menú en celular (lo abre el botón "Menú"; sitio.js, bloque 5) -->
 <div class="panel-menu" id="panel-menu" hidden>
   <button type="button" class="cerrar"><span class="es">Cerrar</span><span class="en">Close</span></button>
@@ -65,17 +79,6 @@
     <button type="button" data-set="es" aria-pressed="true" aria-label="Español">ES</button>
     <button type="button" data-set="en" aria-pressed="false" aria-label="English">EN</button>
   </nav>
-</div>
-
-<!-- ======================================================= PORTADA ===== -->
-<div class="banda azul hero-programa" style="margin-top:calc(var(--u)*6)">
-  <div class="inner">
-    <div class="kicker">
-      <span class="pill es">Programa de Lyra Wildlife</span>
-      <span class="pill en">A Lyra Wildlife programme</span>
-    </div>
-    <h1 class="nombre">Mirada Natural</h1>
-  </div>
 </div>
 
 <div class="wrap">
@@ -92,12 +95,6 @@
     <p class="es">Las expediciones se hacen con el apoyo de los impulsores del programa, que financian el trabajo de campo. <a href="#impulsar">Cómo sumarse</a>.</p>
     <p class="en">Expeditions are made possible by the programme's backers, who fund the field work. <a href="#impulsar">How to take part</a>.</p>
 
-    <!-- FOTO DEL PROGRAMA
-         Guardá una foto horizontal en 2.35:1 como portada.jpg dentro de esta carpeta
-         (mirada-natural/). Mientras no exista, el bloque se oculta solo. -->
-    <div class="figure">
-      <img src="portada.jpg" alt="" width="1920" height="817" onerror="this.closest('.figure').remove()">
-    </div>
   </section>
 
   <!-- ===================================================== DOS PARTES ==== -->
