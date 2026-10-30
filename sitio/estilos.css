@@ -439,6 +439,7 @@ html[data-lang="en"] .es{display:none !important}
   .grilla{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:24px;gap:12px;margin:0;padding:0 24px 4px;scrollbar-width:none}
   .grilla::-webkit-scrollbar{display:none}
   .tarjeta{flex:0 0 76%;scroll-snap-align:start}
+  .tarjeta-sub{-webkit-line-clamp:3;min-height:4.35em}   /* tarjeta más angosta: tres líneas de subtítulo */
 }
 
 /* ---- Formulario ---------------------------------------------------------- */
