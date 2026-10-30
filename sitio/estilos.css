@@ -215,6 +215,9 @@ section:first-of-type{border-top:0}
 .hero-programa .kicker{margin:0 0 calc(var(--u)*1.5)}
 .hero-programa .pill{background:var(--azul-profundo);color:var(--perola)}
 .hero-programa h1.nombre{font-size:clamp(40px,5.5vw,76px);line-height:1;max-width:none}
+/* Variante para fotos muy claras: sin velo y título en azul profundo (la pastilla no cambia) */
+.hero.titulo-oscuro::before{display:none}
+.hero.titulo-oscuro,.hero.titulo-oscuro h1{color:var(--azul-profundo)}
 
 /* ---- Foto a sangre -------------------------------------------------------- */
 .figure{
