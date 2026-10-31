@@ -23,6 +23,12 @@ Hosting: Netlify, plan gratuito. DNS en Namecheap. Online desde el 05/09/2026.
 5. Armonía. Antes de cada commit: (a) todo título y párrafo arranca en la columna de texto (`--col`); solo fotos, portadas y bandas usan el bloque ancho (`--ancho`); (b) correr `material/herramientas/revisar.py` (alineación y desbordes en 4 páginas × 3 anchos); (c) releer los textos nuevos contra los existentes: mismo tono, mismos términos (aliados, impulsores, Banco de Imágenes de la Naturaleza) y sin contradecir reglas ya publicadas (acceso al banco solo con convenio, convenio no público, sin cifras no verificadas).
 6. Imágenes. Cada imagen que Claude escribe en la Mac llega con un manifiesto C2PA ("Content Credentials") firmado por Anthropic que dice que Claude pudo haber creado o modificado el archivo. Son fotos reales, así que se quita antes del commit: `python3 material/herramientas/quitar-c2pa.py sitio` (deja el archivo byte a byte como el original). Si una imagen no pasó por Claude (la copió Kevin), no trae nada.
 
+## Cómo ver los cambios sin publicar
+
+Después de cada cambio, Claude regenera `vista-previa/` (no se sube a GitHub). Para ver el sitio tal como quedaría: abrir `vista-previa/index.html` con doble clic. Se navega entero, con todas las páginas, sin servidor. El formulario de pedido no envía nada en la vista previa (eso lo hace Netlify). Para regenerarla a mano: `python3 material/herramientas/vista-previa.py`.
+
+Los commits quedan en la Mac y no cuestan nada; solo el push (GitHub Desktop → Push origin) publica y gasta créditos de Netlify. Regla desde el 31/10/2026: acumular cambios, revisarlos en la vista previa y hacer pocos pushes.
+
 ## Cómo publicar
 
 - Claude edita en `sitio/` y deja el commit preparado. Kevin abre GitHub Desktop y aprieta "Push origin". Netlify, vinculado al repositorio, publica la rama `main` en un minuto.

@@ -1,10 +1,8 @@
-# Uso: python3 material/herramientas/revisar.py   (requiere: pip install playwright && playwright install chromium)
 # Revisión de armonía: alineación de textos con la columna, desbordes, y textos visibles para leer.
 import asyncio, json, sys
 from playwright.async_api import async_playwright
-import os
-base='file://'+os.path.abspath(os.path.join(os.path.dirname(__file__),'..','..','sitio'))+'/'
-PAGES=['index.html','orca-explorer/index.html','mirada-natural/index.html','mirada-natural/gracias/index.html']
+base='file:///tmp/claude-0/-home-claude/25f4945e-5af7-5d0f-b020-26be38a42525/scratchpad/sitio/'
+PAGES=['index.html','orca-explorer/index.html','mirada-natural/index.html','mirada-natural/gracias/index.html','mirada-natural/colecciones/index.html']
 JS="""
 () => {
   const col = document.querySelector('.wrap').getBoundingClientRect();
