@@ -503,3 +503,13 @@ html[data-lang="en"] .es{display:none !important}
   .cover-texto{left:calc(var(--u)*3);max-width:85%}
   .cover::after{background:linear-gradient(90deg,rgba(63,82,90,.6) 0%,rgba(63,82,90,.25) 60%,rgba(63,82,90,.05) 100%)}
 }
+
+/* ---- Menú con páginas y pie con datos registrales (noviembre 2026) ----------
+   La página actual queda subrayada en el menú. El pie repite la sede, los
+   números de registro y el Charity ID en todas las páginas. ------------------ */
+.menu a[aria-current="page"]{opacity:1;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.panel-menu nav a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px}
+.intro-programas{padding-bottom:0}
+footer .row + .row{margin-top:calc(var(--u)*2)}
+footer .pie-nav{display:flex;gap:calc(var(--u)*2.5);flex-wrap:wrap}
+footer .pie-nav a{border-bottom:0}
