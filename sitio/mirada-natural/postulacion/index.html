@@ -71,8 +71,10 @@
     <!-- Formulario de postulación. Lo procesa Netlify Forms (form-name "postulacion-aliados").
          Los nombres de los campos son los rótulos que aparecen en el correo de aviso.
          El asunto se arma con el nombre de la organización (sitio.js, bloque 5);
-         el campo "email" queda como dirección de respuesta. -->
-    <form class="formulario" name="postulacion-aliados" method="POST" action="/mirada-natural/postulacion/gracias/" data-netlify="true" netlify-honeypot="bot-field" data-asunto="Mirada Natural · Postulación: {organizacion}">
+         el campo "email" queda como dirección de respuesta. Los campos con * son
+         obligatorios; si faltan al enviar, se marcan en rojo (sitio.js, bloque 6).
+         "Otra" en el tipo y "Otro" en dónde se publicarían abren un campo de texto. -->
+    <form class="formulario" name="postulacion-aliados" method="POST" action="/mirada-natural/postulacion/gracias/" data-netlify="true" netlify-honeypot="bot-field" data-asunto="Mirada Natural · Postulación: {organizacion}" novalidate>
       <input type="hidden" name="form-name" value="postulacion-aliados">
       <input type="hidden" name="subject" data-remove-prefix value="Mirada Natural · Postulación de organización aliada">
       <p class="oculto"><label>No completar: <input name="bot-field"></label></p>
@@ -81,33 +83,43 @@
         <legend><span class="num">01</span><span class="es">La organización</span><span class="en">The organisation</span></legend>
         <div class="campos">
           <label class="ancho">
-            <span><span class="es">Nombre de la organización</span><span class="en">Organisation name</span></span>
+            <span><span class="es">Nombre de la organización</span><span class="en">Organisation name</span> <span class="req" aria-hidden="true">*</span></span>
             <input type="text" name="organizacion" required autocomplete="organization">
           </label>
           <div class="grupo">
-            <p class="pregunta"><span class="es">Tipo de organización</span><span class="en">Type of organisation</span></p>
+            <p class="pregunta"><span class="es">Tipo de organización</span><span class="en">Type of organisation</span> <span class="req" aria-hidden="true">*</span></p>
             <div class="opciones">
               <label class="casilla"><input type="radio" name="tipo_de_organizacion" value="Organización sin fines de lucro" required><span><span class="es">Organización sin fines de lucro (asociación o fundación)</span><span class="en">Non-profit organisation (association or foundation)</span></span></label>
               <label class="casilla"><input type="radio" name="tipo_de_organizacion" value="Institución educativa"><span><span class="es">Institución educativa</span><span class="en">Educational institution</span></span></label>
               <label class="casilla"><input type="radio" name="tipo_de_organizacion" value="Institución científica o universidad"><span><span class="es">Institución científica o universidad</span><span class="en">Scientific institution or university</span></span></label>
               <label class="casilla"><input type="radio" name="tipo_de_organizacion" value="Área protegida u organismo público"><span><span class="es">Área protegida u organismo público de conservación</span><span class="en">Protected area or public conservation body</span></span></label>
-              <label class="casilla"><input type="radio" name="tipo_de_organizacion" value="Otra"><span><span class="es">Otra</span><span class="en">Other</span></span></label>
+              <label class="casilla"><input type="radio" name="tipo_de_organizacion" value="Otra" data-muestra="tipo-otra"><span><span class="es">Otra</span><span class="en">Other</span></span></label>
             </div>
           </div>
+          <label class="ancho" id="tipo-otra" hidden>
+            <span><span class="es">¿Qué tipo de organización?</span><span class="en">What type of organisation?</span> <span class="req" aria-hidden="true">*</span></span>
+            <input type="text" name="tipo_de_organizacion_otra">
+          </label>
           <label>
-            <span><span class="es">País</span><span class="en">Country</span></span>
+            <span><span class="es">País</span><span class="en">Country</span> <span class="req" aria-hidden="true">*</span></span>
             <input type="text" name="pais" required autocomplete="country-name">
           </label>
           <label>
-            <span><span class="es">Provincia o ciudad</span><span class="en">Province or city</span></span>
+            <span><span class="es">Provincia o ciudad</span><span class="en">Province or city</span> <span class="req" aria-hidden="true">*</span></span>
             <input type="text" name="provincia_o_ciudad" required autocomplete="address-level1">
           </label>
           <label>
-            <span><span class="es">Sitio web o redes</span><span class="en">Website or social media</span> <span class="es">(opcional)</span><span class="en">(optional)</span></span>
-            <input type="text" name="sitio_web_o_redes">
+            <span><span class="es">Sitio web</span><span class="en">Website</span> <span class="req" aria-hidden="true">*</span></span>
+            <input type="text" name="sitio_web" required>
+            <span class="ayuda"><span class="es">Si no tienen, escribí «no tiene».</span><span class="en">If you do not have one, write “none”.</span></span>
           </label>
           <label>
-            <span><span class="es">CUIT o número de registro</span><span class="en">Tax ID or registration number</span> <span class="es">(opcional)</span><span class="en">(optional)</span></span>
+            <span><span class="es">Redes sociales</span><span class="en">Social media</span> <span class="req" aria-hidden="true">*</span></span>
+            <input type="text" name="redes_sociales" required>
+            <span class="ayuda"><span class="es">Instagram, Facebook u otra; la principal alcanza.</span><span class="en">Instagram, Facebook or another; your main one is enough.</span></span>
+          </label>
+          <label class="ancho">
+            <span><span class="es">CUIT o número de registro</span><span class="en">Tax ID or registration number</span></span>
             <input type="text" name="cuit_o_registro">
             <span class="ayuda"><span class="es">Nos ayuda a verificar la organización.</span><span class="en">It helps us verify the organisation.</span></span>
           </label>
@@ -118,20 +130,20 @@
         <legend><span class="num">02</span><span class="es">Persona de contacto</span><span class="en">Contact person</span></legend>
         <div class="campos">
           <label>
-            <span><span class="es">Nombre y apellido</span><span class="en">Full name</span></span>
+            <span><span class="es">Nombre y apellido</span><span class="en">Full name</span> <span class="req" aria-hidden="true">*</span></span>
             <input type="text" name="nombre" required autocomplete="name">
           </label>
           <label>
-            <span><span class="es">Cargo en la organización</span><span class="en">Role in the organisation</span></span>
+            <span><span class="es">Cargo en la organización</span><span class="en">Role in the organisation</span> <span class="req" aria-hidden="true">*</span></span>
             <input type="text" name="cargo" required autocomplete="organization-title">
           </label>
           <label>
-            <span><span class="es">Correo institucional</span><span class="en">Institutional email</span></span>
+            <span><span class="es">Correo institucional</span><span class="en">Institutional email</span> <span class="req" aria-hidden="true">*</span></span>
             <input type="email" name="email" required autocomplete="email">
             <span class="ayuda"><span class="es">Preferentemente con el dominio de la organización.</span><span class="en">Preferably with the organisation's domain.</span></span>
           </label>
           <label>
-            <span><span class="es">Teléfono</span><span class="en">Phone</span> <span class="es">(opcional)</span><span class="en">(optional)</span></span>
+            <span><span class="es">Teléfono</span><span class="en">Phone</span></span>
             <input type="tel" name="telefono" autocomplete="tel">
           </label>
         </div>
@@ -141,12 +153,12 @@
         <legend><span class="num">03</span><span class="es">Uso de las imágenes</span><span class="en">Use of the images</span></legend>
         <div class="campos">
           <label class="ancho">
-            <span><span class="es">¿Para qué usarían las imágenes?</span><span class="en">What would you use the images for?</span></span>
+            <span><span class="es">¿Para qué usarían las imágenes?</span><span class="en">What would you use the images for?</span> <span class="req" aria-hidden="true">*</span></span>
             <textarea name="uso_previsto" required rows="4"></textarea>
             <span class="ayuda"><span class="es">Proyectos, campañas, materiales educativos, publicaciones.</span><span class="en">Projects, campaigns, educational materials, publications.</span></span>
           </label>
-          <div class="grupo">
-            <p class="pregunta"><span class="es">¿Dónde se publicarían?</span><span class="en">Where would they be published?</span> <span class="es">(opcional)</span><span class="en">(optional)</span></p>
+          <div class="grupo" data-minimo="1">
+            <p class="pregunta"><span class="es">¿Dónde se publicarían?</span><span class="en">Where would they be published?</span> <span class="req" aria-hidden="true">*</span></p>
             <div class="opciones">
               <label class="casilla"><input type="checkbox" name="donde_se_publicarian[]" value="Redes sociales"><span><span class="es">Redes sociales</span><span class="en">Social media</span></span></label>
               <label class="casilla"><input type="checkbox" name="donde_se_publicarian[]" value="Sitio web"><span><span class="es">Sitio web</span><span class="en">Website</span></span></label>
@@ -154,10 +166,15 @@
               <label class="casilla"><input type="checkbox" name="donde_se_publicarian[]" value="Charlas y presentaciones"><span><span class="es">Charlas y presentaciones</span><span class="en">Talks and presentations</span></span></label>
               <label class="casilla"><input type="checkbox" name="donde_se_publicarian[]" value="Informes y publicaciones"><span><span class="es">Informes y publicaciones</span><span class="en">Reports and publications</span></span></label>
               <label class="casilla"><input type="checkbox" name="donde_se_publicarian[]" value="Exposiciones"><span><span class="es">Exposiciones</span><span class="en">Exhibitions</span></span></label>
+              <label class="casilla"><input type="checkbox" name="donde_se_publicarian[]" value="Otro" data-muestra="medio-otro"><span><span class="es">Otro</span><span class="en">Other</span></span></label>
             </div>
           </div>
+          <label class="ancho" id="medio-otro" hidden>
+            <span><span class="es">¿Dónde más?</span><span class="en">Where else?</span> <span class="req" aria-hidden="true">*</span></span>
+            <input type="text" name="donde_se_publicarian_otro">
+          </label>
           <div class="grupo">
-            <p class="pregunta"><span class="es">¿Qué colecciones les interesan?</span><span class="en">Which collections are you interested in?</span> <span class="es">(opcional)</span><span class="en">(optional)</span></p>
+            <p class="pregunta"><span class="es">¿Qué colecciones les interesan?</span><span class="en">Which collections are you interested in?</span></p>
             <div class="opciones">
               <label class="casilla"><input type="checkbox" name="colecciones_de_interes[]" value="Costa Patagónica"><span><span class="es">Costa Patagónica</span><span class="en">Patagonian Coast</span></span></label>
               <label class="casilla"><input type="checkbox" name="colecciones_de_interes[]" value="Patagonia Submarina"><span><span class="es">Patagonia Submarina</span><span class="en">Underwater Patagonia</span></span></label>
@@ -170,7 +187,7 @@
             </div>
           </div>
           <label class="ancho">
-            <span><span class="es">Otros temas que necesiten</span><span class="en">Other subjects you need</span> <span class="es">(opcional)</span><span class="en">(optional)</span></span>
+            <span><span class="es">Otros temas que necesiten</span><span class="en">Other subjects you need</span></span>
             <textarea name="otros_temas" rows="3"></textarea>
           </label>
         </div>
@@ -181,19 +198,22 @@
         <p class="nota-bloque"><span class="es">Es quien firma el convenio. Si sos vos, dejalo en blanco.</span><span class="en">The person who signs the agreement. If that is you, leave this blank.</span></p>
         <div class="campos">
           <label>
-            <span><span class="es">Nombre y apellido</span><span class="en">Full name</span> <span class="es">(opcional)</span><span class="en">(optional)</span></span>
+            <span><span class="es">Nombre y apellido</span><span class="en">Full name</span></span>
             <input type="text" name="representante_legal">
           </label>
           <label>
-            <span><span class="es">Cargo</span><span class="en">Role</span> <span class="es">(opcional)</span><span class="en">(optional)</span></span>
+            <span><span class="es">Cargo</span><span class="en">Role</span></span>
             <input type="text" name="cargo_del_representante">
           </label>
         </div>
       </fieldset>
 
       <div class="conformidad">
-        <label class="casilla"><input type="checkbox" name="conformidad" value="Leyó lo esencial del convenio y acepta un uso sin fines comerciales" required><span><span class="es">Leímos <a href="../#convenio">lo esencial del convenio</a> y el uso de las imágenes será educativo, científico o de conservación, sin fines comerciales.</span><span class="en">We have read <a href="../#convenio">the agreement at a glance</a> and the images will be used for education, research or conservation, with no commercial purpose.</span></span></label>
+        <label class="casilla"><input type="checkbox" name="conformidad" value="Leyó lo esencial del convenio y acepta un uso sin fines comerciales" required><span><span class="es">Leímos <a href="../#convenio">lo esencial del convenio</a> y el uso de las imágenes será educativo, científico o de conservación, sin fines comerciales.</span><span class="en">We have read <a href="../#convenio">the agreement at a glance</a> and the images will be used for education, research or conservation, with no commercial purpose.</span><span class="req" aria-hidden="true"> *</span></span></label>
       </div>
+
+      <p class="nota-obligatorios"><span class="es"><span class="req">*</span> Campo obligatorio.</span><span class="en"><span class="req">*</span> Required field.</span></p>
+      <p class="aviso-error" role="alert" hidden><span class="es">Faltan datos: completá los campos marcados en rojo.</span><span class="en">Some details are missing: please complete the fields marked in red.</span></p>
 
       <div class="acciones">
         <button type="submit" class="btn primario es">Enviar postulación</button>

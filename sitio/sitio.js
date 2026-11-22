@@ -103,3 +103,52 @@ var FORMULARIOS = {
     });
   });
 })();
+
+/* 6. Formularios con campos obligatorios (novalidate):
+      - data-muestra en una opción abre el campo de texto con ese id y lo vuelve obligatorio;
+      - .grupo[data-minimo] exige al menos una casilla tildada;
+      - al enviar con datos faltantes, el formulario recibe la clase "intentado", que
+        pone en rojo los campos incompletos, y se lleva la vista al primero. */
+(function () {
+  document.querySelectorAll('form.formulario[novalidate]').forEach(function (f) {
+    function abrirCampos() {
+      f.querySelectorAll('[data-muestra]').forEach(function (op) {
+        var destino = document.getElementById(op.getAttribute('data-muestra'));
+        if (!destino) return;
+        var ctl = destino.querySelector('input, textarea');
+        destino.hidden = !op.checked;
+        if (ctl) { ctl.required = op.checked; if (!op.checked) ctl.value = ''; }
+      });
+    }
+    function revisarGrupos() {
+      f.querySelectorAll('.grupo[data-minimo]').forEach(function (g) {
+        var casillas = g.querySelectorAll('input[type="checkbox"]');
+        var alguna = Array.prototype.some.call(casillas, function (c) { return c.checked; });
+        if (casillas[0]) casillas[0].setCustomValidity(alguna ? '' : 'Elegí al menos una opción.');
+      });
+    }
+    var aviso = f.querySelector('.aviso-error');
+    function actualizar() {
+      abrirCampos(); revisarGrupos();
+      if (aviso && f.classList.contains('intentado')) aviso.hidden = f.checkValidity();
+    }
+    f.addEventListener('change', actualizar);
+    f.addEventListener('input', actualizar);
+    actualizar();
+    f.addEventListener('submit', function (e) {
+      actualizar();
+      if (!f.checkValidity()) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        f.classList.add('intentado');
+        if (aviso) aviso.hidden = false;
+        var primero = f.querySelector(':invalid');
+        if (primero) {
+          var bloque = primero.closest('.grupo, label') || primero;
+          bloque.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          try { primero.focus({ preventScroll: true }); } catch (err) { primero.focus(); }
+        }
+      }
+    }, true);
+  });
+})();

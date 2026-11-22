@@ -547,6 +547,21 @@ section.volver{border-top:0;padding-top:calc(var(--u)*4)}
 .formulario .pie-form{margin:calc(var(--u)*2) 0 0;font-size:14px;color:var(--texto-sec)}
 @media (max-width:620px){.formulario .opciones{grid-template-columns:1fr}}
 
+/* Obligatorios y errores: asterisco en los rótulos; al intentar enviar con datos
+   faltantes, el marco de cada campo incompleto se pone rojo (sitio.js, bloque 6). */
+:root{--error:#B3261E}
+.formulario [hidden]{display:none !important}
+.formulario .req{color:var(--terracota);font-weight:500}
+.formulario .nota-obligatorios{margin:calc(var(--u)*2) 0 0;font-size:13px;color:var(--texto-terc)}
+.formulario .aviso-error{margin:calc(var(--u)*1.5) 0 0;font-size:14px;font-weight:500;color:var(--error)}
+.formulario.intentado input:invalid,.formulario.intentado textarea:invalid{border-color:var(--error);box-shadow:0 0 0 1px var(--error)}
+.formulario.intentado .grupo:has(input:invalid) .opciones{outline:1px solid var(--error);outline-offset:10px;border-radius:6px}
+.formulario.intentado .grupo:has(input:invalid) .pregunta,
+.formulario.intentado label:has(> input:invalid) > span:first-child,
+.formulario.intentado label:has(> textarea:invalid) > span:first-child,
+.formulario.intentado .conformidad:has(input:invalid) label{color:var(--error)}
+.formulario.intentado .conformidad:has(input:invalid) input{outline:2px solid var(--error);outline-offset:1px}
+
 @media (max-width:620px){
   .formulario .campos{grid-template-columns:1fr}
 }
