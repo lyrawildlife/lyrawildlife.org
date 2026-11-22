@@ -81,3 +81,25 @@ var FORMULARIOS = {
   abrir();
   window.addEventListener('hashchange', abrir);
 })();
+
+/* 5. Asunto del correo de Netlify Forms: si el formulario tiene data-asunto, al
+      enviarlo se arma el asunto con los datos cargados. {campo} se reemplaza por
+      el valor de ese campo; {a|b} usa el primero que tenga valor. Sin JavaScript
+      queda el asunto fijo del campo oculto "subject". */
+(function () {
+  document.querySelectorAll('form[data-asunto]').forEach(function (f) {
+    f.addEventListener('submit', function () {
+      var campo = f.querySelector('input[name="subject"]');
+      if (!campo) return;
+      var asunto = f.getAttribute('data-asunto').replace(/\{([^}]+)\}/g, function (_, nombres) {
+        var partes = nombres.split('|');
+        for (var i = 0; i < partes.length; i++) {
+          var el = f.elements[partes[i]];
+          if (el && el.value && el.value.trim()) return el.value.trim();
+        }
+        return '';
+      });
+      campo.value = asunto.replace(/\s+/g, ' ').trim();
+    });
+  });
+})();

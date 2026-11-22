@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ==========================================================================
+     LYRA WILDLIFE  ·  Mirada Natural  ·  postulación
+     Cada texto está dos veces: class="es" y class="en". Editá siempre las dos.
+     ========================================================================== -->
+
+<title>Postulación · Mirada Natural · Lyra Wildlife</title>
+<meta name="description" content="Formulario para que organizaciones de conservación, educación e investigación se postulen como aliadas del Banco de Imágenes de la Naturaleza de Mirada Natural.">
+<link rel="canonical" href="https://lyrawildlife.org/mirada-natural/postulacion/">
+<meta name="theme-color" content="#788990">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="../../apple-touch-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../estilos.css">
+</head>
+
+<body>
+<header class="top">
+  <!-- Logotipo: versión reforzada del wordmark, en el color del texto. No lo reemplaces por texto. -->
+  <a class="marca" href="../../" aria-label="Lyra Wildlife">
+    <svg viewBox="-25.5 0 983 251" role="img" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M0 25.5V175.5"/><path d="M92 75.5 38 225.5"/><path d="m26 75.5 30 100"/><path d="M122 75.5v100"/><path d="M122 121.5a46 46 0 0 1 46-46"/><path d="M296 125.5a50 50 0 1 0-100 0 50 50 0 1 0 100 0"/><path d="M296 75.5v100"/><path d="m368 75.5 28 100 28-100 28 100 28-100"/><path d="M514 75.5v100"/><path d="M546 25.5v150"/><path d="M678 125.5a50 50 0 1 0-100 0 50 50 0 1 0 100 0"/><path d="M678 25.5v150"/><path d="M710 25.5v150"/><path d="M742 75.5v100"/><path d="M774 175.5V69.5"/><path d="M774 69.5a44 44 0 0 1 44-44"/><path d="M760 75.5h46"/><path d="M932 125.5a50 50 0 1 0-10.6 30.78"/><path d="M832 125.5h100"/></g><g fill="currentColor"><circle cx="514" cy="40.5" r="6.82"/><circle cx="742" cy="40.5" r="6.82"/></g></svg>
+  </a>
+  <nav class="menu" aria-label="Secciones">
+      <a href="../../quienes-somos/"><span class="es">Quiénes somos</span><span class="en">About us</span></a>
+      <a href="../../programas/"><span class="es">Programas</span><span class="en">Programs</span></a>
+      <a href="../../institucional/"><span class="es">Institucional</span><span class="en">Legal information</span></a>
+      <a href="../#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
+  </nav>
+  <div class="top-acciones">
+    <nav class="langs" aria-label="Idioma">
+      <button type="button" data-set="es" aria-pressed="true" aria-label="Español">ES</button>
+      <button type="button" data-set="en" aria-pressed="false" aria-label="English">EN</button>
+    </nav>
+    <button type="button" class="menu-btn" aria-expanded="false" aria-controls="panel-menu"><span class="es">Menú</span><span class="en">Menu</span></button>
+  </div>
+</header>
+<!-- Panel del menú en celular (lo abre el botón "Menú"; sitio.js, bloque 5) -->
+<div class="panel-menu" id="panel-menu" hidden>
+  <button type="button" class="cerrar"><span class="es">Cerrar</span><span class="en">Close</span></button>
+  <nav aria-label="Secciones">
+      <a href="../../quienes-somos/"><span class="es">Quiénes somos</span><span class="en">About us</span></a>
+      <a href="../../programas/"><span class="es">Programas</span><span class="en">Programs</span></a>
+      <a href="../../institucional/"><span class="es">Institucional</span><span class="en">Legal information</span></a>
+      <a href="../#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
+  </nav>
+  <nav class="langs" aria-label="Idioma">
+    <button type="button" data-set="es" aria-pressed="true" aria-label="Español">ES</button>
+    <button type="button" data-set="en" aria-pressed="false" aria-label="English">EN</button>
+  </nav>
+</div>
+
+<div class="wrap">
+<main>
+  <section>
+    <p class="eyebrow es">Mirada Natural · Para organizaciones</p>
+    <p class="eyebrow en">Mirada Natural · For organisations</p>
+    <h1 class="es">Postularse como organización aliada</h1>
+    <h1 class="en">Apply as a partner organisation</h1>
+    <p class="es">Completá este formulario con los datos de la organización y el uso que le darían a las imágenes. Lo revisamos y, si cumple los requisitos, te enviamos el Convenio de Aliado de Mirada Natural para que lo firme el representante legal.</p>
+    <p class="en">Fill in this form with your organisation's details and the use you would make of the images. We will review it and, if it meets the requirements, send you the Mirada Natural Partner Agreement for your legal representative to sign.</p>
+
+    <!-- Formulario de postulación. Lo procesa Netlify Forms (form-name "postulacion-aliados").
+         Los nombres de los campos son los rótulos que aparecen en el correo de aviso.
+         El asunto se arma con el nombre de la organización (sitio.js, bloque 5);
+         el campo "email" queda como dirección de respuesta. -->
+    <form class="formulario" name="postulacion-aliados" method="POST" action="/mirada-natural/postulacion/gracias/" data-netlify="true" netlify-honeypot="bot-field" data-asunto="Mirada Natural · Postulación: {organizacion}">
+      <input type="hidden" name="form-name" value="postulacion-aliados">
+      <input type="hidden" name="subject" data-remove-prefix value="Mirada Natural · Postulación de organización aliada">
+      <p class="oculto"><label>No completar: <input name="bot-field"></label></p>
+
+      <fieldset>
+        <legend><span class="num">01</span><span class="es">La organización</span><span class="en">The organisation</span></legend>
+        <div class="campos">
+          <label class="ancho">
+            <span><span class="es">Nombre de la organización</span><span class="en">Organisation name</span></span>
+            <input type="text" name="organizacion" required autocomplete="organization">
+          </label>
+          <div class="grupo">
+            <p class="pregunta"><span class="es">Tipo de organización</span><span class="en">Type of organisation</span></p>
+            <div class="opciones">
+              <label class="casilla"><input type="radio" name="tipo_de_organizacion" value="Organización sin fines de lucro" required><span><span class="es">Organización sin fines de lucro (asociación o fundación)</span><span class="en">Non-profit organisation (association or foundation)</span></span></label>
+              <label class="casilla"><input type="radio" name="tipo_de_organizacion" value="Institución educativa"><span><span class="es">Institución educativa</span><span class="en">Educational institution</span></span></label>
+              <label class="casilla"><input type="radio" name="tipo_de_organizacion" value="Institución científica o universidad"><span><span class="es">Institución científica o universidad</span><span class="en">Scientific institution or university</span></span></label>
+              <label class="casilla"><input type="radio" name="tipo_de_organizacion" value="Área protegida u organismo público"><span><span class="es">Área protegida u organismo público de conservación</span><span class="en">Protected area or public conservation body</span></span></label>
+              <label class="casilla"><input type="radio" name="tipo_de_organizacion" value="Otra"><span><span class="es">Otra</span><span class="en">Other</span></span></label>
+            </div>
+          </div>
+          <label>
+            <span><span class="es">País</span><span class="en">Country</span></span>
+            <input type="text" name="pais" required autocomplete="country-name">
+          </label>
+          <label>
+            <span><span class="es">Provincia o ciudad</span><span class="en">Province or city</span></span>
+            <input type="text" name="provincia_o_ciudad" required autocomplete="address-level1">
+          </label>
+          <label>
+            <span><span class="es">Sitio web o redes</span><span class="en">Website or social media</span> <span class="es">(opcional)</span><span class="en">(optional)</span></span>
+            <input type="text" name="sitio_web_o_redes">
+          </label>
+          <label>
+            <span><span class="es">CUIT o número de registro</span><span class="en">Tax ID or registration number</span> <span class="es">(opcional)</span><span class="en">(optional)</span></span>
+            <input type="text" name="cuit_o_registro">
+            <span class="ayuda"><span class="es">Nos ayuda a verificar la organización.</span><span class="en">It helps us verify the organisation.</span></span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span class="num">02</span><span class="es">Persona de contacto</span><span class="en">Contact person</span></legend>
+        <div class="campos">
+          <label>
+            <span><span class="es">Nombre y apellido</span><span class="en">Full name</span></span>
+            <input type="text" name="nombre" required autocomplete="name">
+          </label>
+          <label>
+            <span><span class="es">Cargo en la organización</span><span class="en">Role in the organisation</span></span>
+            <input type="text" name="cargo" required autocomplete="organization-title">
+          </label>
+          <label>
+            <span><span class="es">Correo institucional</span><span class="en">Institutional email</span></span>
+            <input type="email" name="email" required autocomplete="email">
+            <span class="ayuda"><span class="es">Preferentemente con el dominio de la organización.</span><span class="en">Preferably with the organisation's domain.</span></span>
+          </label>
+          <label>
+            <span><span class="es">Teléfono</span><span class="en">Phone</span> <span class="es">(opcional)</span><span class="en">(optional)</span></span>
+            <input type="tel" name="telefono" autocomplete="tel">
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span class="num">03</span><span class="es">Uso de las imágenes</span><span class="en">Use of the images</span></legend>
+        <div class="campos">
+          <label class="ancho">
+            <span><span class="es">¿Para qué usarían las imágenes?</span><span class="en">What would you use the images for?</span></span>
+            <textarea name="uso_previsto" required rows="4"></textarea>
+            <span class="ayuda"><span class="es">Proyectos, campañas, materiales educativos, publicaciones.</span><span class="en">Projects, campaigns, educational materials, publications.</span></span>
+          </label>
+          <div class="grupo">
+            <p class="pregunta"><span class="es">¿Dónde se publicarían?</span><span class="en">Where would they be published?</span> <span class="es">(opcional)</span><span class="en">(optional)</span></p>
+            <div class="opciones">
+              <label class="casilla"><input type="checkbox" name="donde_se_publicarian[]" value="Redes sociales"><span><span class="es">Redes sociales</span><span class="en">Social media</span></span></label>
+              <label class="casilla"><input type="checkbox" name="donde_se_publicarian[]" value="Sitio web"><span><span class="es">Sitio web</span><span class="en">Website</span></span></label>
+              <label class="casilla"><input type="checkbox" name="donde_se_publicarian[]" value="Materiales impresos"><span><span class="es">Materiales impresos</span><span class="en">Printed materials</span></span></label>
+              <label class="casilla"><input type="checkbox" name="donde_se_publicarian[]" value="Charlas y presentaciones"><span><span class="es">Charlas y presentaciones</span><span class="en">Talks and presentations</span></span></label>
+              <label class="casilla"><input type="checkbox" name="donde_se_publicarian[]" value="Informes y publicaciones"><span><span class="es">Informes y publicaciones</span><span class="en">Reports and publications</span></span></label>
+              <label class="casilla"><input type="checkbox" name="donde_se_publicarian[]" value="Exposiciones"><span><span class="es">Exposiciones</span><span class="en">Exhibitions</span></span></label>
+            </div>
+          </div>
+          <div class="grupo">
+            <p class="pregunta"><span class="es">¿Qué colecciones les interesan?</span><span class="en">Which collections are you interested in?</span> <span class="es">(opcional)</span><span class="en">(optional)</span></p>
+            <div class="opciones">
+              <label class="casilla"><input type="checkbox" name="colecciones_de_interes[]" value="Costa Patagónica"><span><span class="es">Costa Patagónica</span><span class="en">Patagonian Coast</span></span></label>
+              <label class="casilla"><input type="checkbox" name="colecciones_de_interes[]" value="Patagonia Submarina"><span><span class="es">Patagonia Submarina</span><span class="en">Underwater Patagonia</span></span></label>
+              <label class="casilla"><input type="checkbox" name="colecciones_de_interes[]" value="Andes Patagónicos"><span><span class="es">Andes Patagónicos</span><span class="en">Patagonian Andes</span></span></label>
+              <label class="casilla"><input type="checkbox" name="colecciones_de_interes[]" value="Altiplano"><span><span class="es">Altiplano</span><span class="en">Altiplano</span></span></label>
+              <label class="casilla"><input type="checkbox" name="colecciones_de_interes[]" value="Selva Misionera"><span><span class="es">Selva Misionera</span><span class="en">Misiones Rainforest</span></span></label>
+              <label class="casilla"><input type="checkbox" name="colecciones_de_interes[]" value="Esteros y Bañados"><span><span class="es">Esteros y Bañados</span><span class="en">Wetlands and Marshes</span></span></label>
+              <label class="casilla"><input type="checkbox" name="colecciones_de_interes[]" value="Caribe Submarino"><span><span class="es">Caribe Submarino</span><span class="en">Underwater Caribbean</span></span></label>
+              <label class="casilla"><input type="checkbox" name="colecciones_de_interes[]" value="Mar Rojo"><span><span class="es">Mar Rojo</span><span class="en">Red Sea</span></span></label>
+            </div>
+          </div>
+          <label class="ancho">
+            <span><span class="es">Otros temas que necesiten</span><span class="en">Other subjects you need</span> <span class="es">(opcional)</span><span class="en">(optional)</span></span>
+            <textarea name="otros_temas" rows="3"></textarea>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span class="num">04</span><span class="es">Representante legal</span><span class="en">Legal representative</span></legend>
+        <p class="nota-bloque"><span class="es">Es quien firma el convenio. Si sos vos, dejalo en blanco.</span><span class="en">The person who signs the agreement. If that is you, leave this blank.</span></p>
+        <div class="campos">
+          <label>
+            <span><span class="es">Nombre y apellido</span><span class="en">Full name</span> <span class="es">(opcional)</span><span class="en">(optional)</span></span>
+            <input type="text" name="representante_legal">
+          </label>
+          <label>
+            <span><span class="es">Cargo</span><span class="en">Role</span> <span class="es">(opcional)</span><span class="en">(optional)</span></span>
+            <input type="text" name="cargo_del_representante">
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="conformidad">
+        <label class="casilla"><input type="checkbox" name="conformidad" value="Leyó lo esencial del convenio y acepta un uso sin fines comerciales" required><span><span class="es">Leímos <a href="../#convenio">lo esencial del convenio</a> y el uso de las imágenes será educativo, científico o de conservación, sin fines comerciales.</span><span class="en">We have read <a href="../#convenio">the agreement at a glance</a> and the images will be used for education, research or conservation, with no commercial purpose.</span></span></label>
+      </div>
+
+      <div class="acciones">
+        <button type="submit" class="btn primario es">Enviar postulación</button>
+        <button type="submit" class="btn primario en">Send application</button>
+      </div>
+      <p class="pie-form"><span class="es">Te respondemos al correo que dejaste. Si la organización cumple los requisitos, te enviamos el convenio para que lo firme el representante legal.</span><span class="en">We will reply to the email you provided. If the organisation meets the requirements, we will send the agreement for the legal representative to sign.</span></p>
+    </form>
+  </section>
+
+  <section class="volver">
+    <p class="es"><a href="../">Volver a Mirada Natural</a></p>
+    <p class="en"><a href="../">Back to Mirada Natural</a></p>
+  </section>
+</main>
+
+<footer>
+  <!-- Datos registrales: se repiten en el pie de todas las páginas. Si cambia alguno, cambialo en todas. -->
+  <div class="row">
+    <span><a href="../../">Asociación Civil Ambiental Lyra Wildlife</a> · Aguilar 2305, C1426 Ciudad Autónoma de Buenos Aires, Argentina</span>
+    <span class="stamp">IGJ N.º 1756 · CUIT 30-71970022-1 · Charity ID 032258981</span>
+  </div>
+  <div class="row">
+    <nav class="pie-nav" aria-label="Páginas">
+      <a href="../../quienes-somos/"><span class="es">Quiénes somos</span><span class="en">About us</span></a>
+      <a href="../../programas/"><span class="es">Programas</span><span class="en">Programs</span></a>
+      <a href="../../institucional/"><span class="es">Institucional</span><span class="en">Legal information</span></a>
+      <a href="../../contacto/"><span class="es">Contacto</span><span class="en">Contact</span></a>
+    </nav>
+    <a href="mailto:contacto@lyrawildlife.org">contacto@lyrawildlife.org</a>
+  </div>
+</footer>
+</div>
+
+<script src="../../sitio.js"></script>
+</body>
+</html>

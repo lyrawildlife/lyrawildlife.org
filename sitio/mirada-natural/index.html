@@ -204,38 +204,43 @@
         <div>
           <h3 class="es">Acceso</h3>
           <h3 class="en">Access</h3>
-          <p class="es">La organización recibe acceso al catálogo de descarga. Lo que no esté en el catálogo se puede <a href="colecciones/#pedido">pedir a medida</a>.</p>
-          <p class="en">The organisation receives access to the download catalogue. Anything not in the catalogue can be <a href="colecciones/#pedido">requested</a>.</p>
+          <p class="es">La organización recibe acceso al catálogo de descarga. Lo que no esté en el catálogo se puede pedir a medida.</p>
+          <p class="en">The organisation receives access to the download catalogue. Anything not in the catalogue can be requested.</p>
         </div>
       </div>
     </div>
 
-    <div class="esencial">
-      <h3 class="es">Lo esencial del convenio</h3>
-      <h3 class="en">The agreement at a glance</h3>
-      <ul class="es">
-        <li>Uso educativo, científico y de conservación. Sin fines comerciales.</li>
-        <li>Crédito en cada uso: <em>Foto: nombre del fotógrafo - Lyra Wildlife</em>. En redes, etiqueta a @lyra.wildlife.</li>
-        <li>Las imágenes se usan como están: se pueden recortar y cambiar de tamaño; no se alteran colores, luz ni contraste.</li>
-        <li>Ningún uso asociado al cautiverio de animales.</li>
-        <li>Una comunicación por año sobre el uso de las imágenes, por un formulario simple.</li>
-        <li>Si Lyra Wildlife pide retirar una imagen, el aliado deja de usarla en 10 días hábiles.</li>
-        <li>Lyra Wildlife puede mostrar el nombre y el logo del aliado en su web y sus materiales.</li>
-      </ul>
-      <ul class="en">
-        <li>Educational, scientific and conservation use. No commercial use.</li>
-        <li>Credit on every use: <em>Photo: photographer's name - Lyra Wildlife</em>. On social media, tag @lyra.wildlife.</li>
-        <li>Images are used as they are: cropping and resizing are fine; colours, light and contrast are not altered.</li>
-        <li>No use associated with animals in captivity.</li>
-        <li>One update a year on how the images were used, through a simple form.</li>
-        <li>If Lyra Wildlife asks for an image to be withdrawn, the partner stops using it within 10 working days.</li>
-        <li>Lyra Wildlife may show the partner's name and logo on its website and materials.</li>
-      </ul>
-    </div>
+    <!-- Lo esencial del convenio: plegado. Se abre solo si se llega con #convenio. -->
+    <details class="desplegable chico" id="convenio">
+      <summary>
+        <span class="desplegable-titulo"><span class="es">Lo esencial del convenio</span><span class="en">The agreement at a glance</span></span>
+        <span class="signo" aria-hidden="true"></span>
+      </summary>
+      <div class="desplegable-cuerpo">
+        <ul class="es">
+          <li>Uso educativo, científico y de conservación. Sin fines comerciales.</li>
+          <li>Crédito en cada uso: <em>Foto: nombre del fotógrafo - Lyra Wildlife</em>. En redes, etiqueta a @lyra.wildlife.</li>
+          <li>Las imágenes se usan como están: se pueden recortar y cambiar de tamaño; no se alteran colores, luz ni contraste.</li>
+          <li>Ningún uso asociado al cautiverio de animales.</li>
+          <li>Una comunicación por año sobre el uso de las imágenes, por un formulario simple.</li>
+          <li>Si Lyra Wildlife pide retirar una imagen, el aliado deja de usarla en 10 días hábiles.</li>
+          <li>Lyra Wildlife puede mostrar el nombre y el logo del aliado en su web y sus materiales.</li>
+        </ul>
+        <ul class="en">
+          <li>Educational, scientific and conservation use. No commercial use.</li>
+          <li>Credit on every use: <em>Photo: photographer's name - Lyra Wildlife</em>. On social media, tag @lyra.wildlife.</li>
+          <li>Images are used as they are: cropping and resizing are fine; colours, light and contrast are not altered.</li>
+          <li>No use associated with animals in captivity.</li>
+          <li>One update a year on how the images were used, through a simple form.</li>
+          <li>If Lyra Wildlife asks for an image to be withdrawn, the partner stops using it within 10 working days.</li>
+          <li>Lyra Wildlife may show the partner's name and logo on its website and materials.</li>
+        </ul>
+      </div>
+    </details>
 
     <div class="acciones">
-      <a class="btn primario es" data-form="aliados" data-asunto-es="Mirada Natural: postulación como organización aliada" data-asunto-en="Mirada Natural: partner organisation application" href="mailto:contacto@lyrawildlife.org">Postularse como aliado</a>
-      <a class="btn primario en" data-form="aliados" data-asunto-es="Mirada Natural: postulación como organización aliada" data-asunto-en="Mirada Natural: partner organisation application" href="mailto:contacto@lyrawildlife.org">Apply as a partner</a>
+      <a class="btn primario es" href="postulacion/">Postularse como aliado</a>
+      <a class="btn primario en" href="postulacion/">Apply as a partner</a>
       <!-- El convenio no se publica: se envía solo a las organizaciones que cumplen los requisitos. -->
     </div>
   </section>

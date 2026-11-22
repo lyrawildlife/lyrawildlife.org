@@ -503,6 +503,14 @@ html[data-lang="en"] .es{display:none !important}
 .desplegable-cuerpo{padding:0 0 calc(var(--u)*5)}
 .desplegable-cuerpo > p:first-child{margin-top:0}
 section.volver{border-top:0;padding-top:calc(var(--u)*4)}
+/* Variante chica, dentro de una sección (Lo esencial del convenio) */
+.desplegable.chico{margin:calc(var(--u)*4) 0}
+.desplegable.chico summary{padding:calc(var(--u)*2.5) 0}
+.desplegable.chico .desplegable-titulo{font-size:20px}
+.desplegable.chico .signo{width:36px;height:36px}
+.desplegable.chico .desplegable-cuerpo{padding-bottom:calc(var(--u)*3)}
+.desplegable.chico ul{margin:0;color:var(--azul-profundo)}
+.desplegable.chico li{margin-bottom:calc(var(--u)*1.25)}
 
 /* ---- Formulario ---------------------------------------------------------- */
 .formulario{margin-top:calc(var(--u)*3)}
@@ -518,6 +526,26 @@ section.volver{border-top:0;padding-top:calc(var(--u)*4)}
 .formulario input:focus,.formulario textarea:focus{outline:2px solid var(--azul);outline-offset:1px;border-color:var(--azul)}
 .formulario textarea{resize:vertical;min-height:88px}
 .formulario .btn{cursor:pointer}
+
+/* Formulario largo (postulación): bloques con rótulo, opciones y ayudas */
+.formulario fieldset{border:0;padding:0;margin:0 0 calc(var(--u)*6);min-width:0}
+.formulario fieldset:first-of-type{margin-top:calc(var(--u)*6)}
+.formulario legend{
+  padding:0;margin:0 0 calc(var(--u)*2.5);
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--texto-terc);
+}
+.formulario legend .num{margin-right:calc(var(--u)*1.5);padding:0}
+.formulario .nota-bloque{margin:calc(var(--u)*-1) 0 calc(var(--u)*2.5);font-size:14px;color:var(--texto-sec)}
+.formulario .ayuda{font-size:12px;color:var(--texto-terc);letter-spacing:.01em}
+.formulario .grupo{grid-column:1/-1;display:flex;flex-direction:column;gap:10px}
+.formulario .pregunta{margin:0;font-size:13px;color:var(--texto-sec);letter-spacing:.02em}
+.formulario .opciones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px calc(var(--u)*3)}
+.formulario label.casilla{flex-direction:row;align-items:flex-start;gap:10px;font-size:15px;line-height:1.4;color:var(--azul-profundo);letter-spacing:0;cursor:pointer}
+.formulario label.casilla input{width:18px;height:18px;padding:0;margin:2px 0 0;flex:0 0 auto;accent-color:var(--azul-profundo)}
+.formulario .conformidad{border-top:1px solid var(--linea);padding-top:calc(var(--u)*3)}
+.formulario .conformidad label.casilla{font-size:15px}
+.formulario .pie-form{margin:calc(var(--u)*2) 0 0;font-size:14px;color:var(--texto-sec)}
+@media (max-width:620px){.formulario .opciones{grid-template-columns:1fr}}
 
 @media (max-width:620px){
   .formulario .campos{grid-template-columns:1fr}

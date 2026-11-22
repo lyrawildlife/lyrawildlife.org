@@ -160,8 +160,9 @@
         <p class="es">Contanos qué buscás y para qué. Si tu organización cumple los requisitos y las imágenes están en el banco, te las mandamos. Si no están, lo tenemos en cuenta para las próximas expediciones.</p>
         <p class="en">Tell us what you are looking for and what it is for. If your organisation meets the requirements and the images are in the bank, we will send them. If they are not, we will keep it in mind for upcoming expeditions.</p>
 
-      <form class="formulario" name="pedido-imagenes" method="POST" action="/mirada-natural/gracias/" data-netlify="true" netlify-honeypot="bot-field">
+      <form class="formulario" name="pedido-imagenes" method="POST" action="/mirada-natural/gracias/" data-netlify="true" netlify-honeypot="bot-field" data-asunto="Mirada Natural · Pedido de imágenes: {organizacion|nombre}">
         <input type="hidden" name="form-name" value="pedido-imagenes">
+        <input type="hidden" name="subject" data-remove-prefix value="Mirada Natural · Pedido de imágenes">
         <p class="oculto"><label>No completar: <input name="bot-field"></label></p>
 
         <div class="campos">
