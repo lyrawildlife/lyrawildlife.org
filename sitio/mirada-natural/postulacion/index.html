@@ -194,15 +194,15 @@
 
       <fieldset>
         <legend><span class="num">04</span><span class="es">Representante legal</span><span class="en">Legal representative</span></legend>
-        <p class="nota-bloque"><span class="es">Es quien firma el convenio. Si sos vos, dejalo en blanco.</span><span class="en">The person who signs the agreement. If that is you, leave this blank.</span></p>
+        <p class="nota-bloque"><span class="es">Es quien firma el convenio. Si sos vos, repetí tus datos.</span><span class="en">The person who signs the agreement. If that is you, repeat your details.</span></p>
         <div class="campos">
           <label>
-            <span><span class="es">Nombre y apellido</span><span class="en">Full name</span></span>
-            <input type="text" name="representante_legal">
+            <span><span class="es">Nombre y apellido</span><span class="en">Full name</span> <span class="req" aria-hidden="true">*</span></span>
+            <input type="text" name="representante_legal" required>
           </label>
           <label>
-            <span><span class="es">Cargo</span><span class="en">Role</span></span>
-            <input type="text" name="cargo_del_representante">
+            <span><span class="es">Cargo</span><span class="en">Role</span> <span class="req" aria-hidden="true">*</span></span>
+            <input type="text" name="cargo_del_representante" required>
           </label>
         </div>
       </fieldset>
