@@ -6,7 +6,7 @@
    ========================================================================== */
 
 var FORMULARIOS = {
-  aliados:  "",   // Postulación de organizaciones aliadas
+  aliados:  "",   // Sin uso: "Postularse a la red" lleva a mirada-natural/postulacion/
   sponsors: ""    // Contacto de sponsors
 };
 

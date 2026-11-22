@@ -10,7 +10,7 @@
      ========================================================================== -->
 
 <title>Postulación · Mirada Natural · Lyra Wildlife</title>
-<meta name="description" content="Formulario para que organizaciones de conservación, educación e investigación se postulen como aliadas del Banco de Imágenes de la Naturaleza de Mirada Natural.">
+<meta name="description" content="Formulario para que organizaciones de conservación, educación e investigación se postulen a la Red Mirada Natural y accedan al Banco de Imágenes de la Naturaleza.">
 <link rel="canonical" href="https://lyrawildlife.org/mirada-natural/postulacion/">
 <meta name="theme-color" content="#788990">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
@@ -63,20 +63,20 @@
   <section>
     <p class="eyebrow es">Mirada Natural · Para organizaciones</p>
     <p class="eyebrow en">Mirada Natural · For organisations</p>
-    <h1 class="es">Postularse como organización aliada</h1>
-    <h1 class="en">Apply as a partner organisation</h1>
-    <p class="es">Completá este formulario con los datos de la organización y el uso que le darían a las imágenes. Lo revisamos y, si cumple los requisitos, te enviamos el Convenio de Aliado de Mirada Natural para que lo firme el representante legal.</p>
-    <p class="en">Fill in this form with your organisation's details and the use you would make of the images. We will review it and, if it meets the requirements, send you the Mirada Natural Partner Agreement for your legal representative to sign.</p>
+    <h1 class="es">Sumarse a la Red Mirada Natural</h1>
+    <h1 class="en">Join the Mirada Natural Network</h1>
+    <p class="es">Completá este formulario con los datos de la organización y el uso que le darían a las imágenes. Lo revisamos y, si cumple los requisitos, te enviamos el Convenio de la Red Mirada Natural para que lo firme el representante legal.</p>
+    <p class="en">Fill in this form with your organisation's details and the use you would make of the images. We will review it and, if it meets the requirements, send you the Mirada Natural Network Agreement for your legal representative to sign.</p>
 
-    <!-- Formulario de postulación. Lo procesa Netlify Forms (form-name "postulacion-aliados").
+    <!-- Formulario de postulación. Lo procesa Netlify Forms (form-name "postulacion-red").
          Los nombres de los campos son los rótulos que aparecen en el correo de aviso.
          El asunto se arma con el nombre de la organización (sitio.js, bloque 5);
          el campo "email" queda como dirección de respuesta. Los campos con * son
          obligatorios; si faltan al enviar, se marcan en rojo (sitio.js, bloque 6).
          "Otra" en el tipo y "Otro" en dónde se publicarían abren un campo de texto. -->
-    <form class="formulario" name="postulacion-aliados" method="POST" action="/mirada-natural/postulacion/gracias/" data-netlify="true" netlify-honeypot="bot-field" data-asunto="Mirada Natural · Postulación: {organizacion}" novalidate>
-      <input type="hidden" name="form-name" value="postulacion-aliados">
-      <input type="hidden" name="subject" data-remove-prefix value="Mirada Natural · Postulación de organización aliada">
+    <form class="formulario" name="postulacion-red" method="POST" action="/mirada-natural/postulacion/gracias/" data-netlify="true" netlify-honeypot="bot-field" data-asunto="Mirada Natural · Postulación a la red: {organizacion}" novalidate>
+      <input type="hidden" name="form-name" value="postulacion-red">
+      <input type="hidden" name="subject" data-remove-prefix value="Mirada Natural · Postulación a la red">
       <p class="oculto"><label>No completar: <input name="bot-field"></label></p>
 
       <fieldset>
@@ -111,7 +111,6 @@
           <label>
             <span><span class="es">Sitio web</span><span class="en">Website</span> <span class="req" aria-hidden="true">*</span></span>
             <input type="text" name="sitio_web" required>
-            <span class="ayuda"><span class="es">Si no tienen, escribí «no tiene».</span><span class="en">If you do not have one, write “none”.</span></span>
           </label>
           <label>
             <span><span class="es">Redes sociales</span><span class="en">Social media</span> <span class="req" aria-hidden="true">*</span></span>
