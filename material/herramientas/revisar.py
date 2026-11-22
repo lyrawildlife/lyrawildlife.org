@@ -10,7 +10,7 @@ JS="""
   const out = [];
   document.querySelectorAll('main h1, main h2, main h3, main p, main dl, main ul, .colecciones .cabecera h2, .colecciones .cabecera p').forEach(el => {
     if (!el.offsetParent) return;                      // oculto (otro idioma)
-    if (el.closest('.cover, .tarjeta, .banda, .figure, .foto-titulo')) return;  // bloques a sangre con su propia alineación
+    if (el.closest('.cover, .tarjeta, .banda, .figure, .foto-lado')) return;  // bloques a sangre con su propia alineación
     const r = el.getBoundingClientRect();
     if (r.width === 0) return;
     const ta = getComputedStyle(el).textAlign;
