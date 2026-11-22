@@ -6,7 +6,8 @@
 
 <!-- ==========================================================================
      LYRA WILDLIFE  ·  Mirada Natural  ·  todas las colecciones
-     Misma tarjeta que en mirada-natural/index.html, en cuatro columnas. Para
+     Misma tarjeta que en mirada-natural/index.html, en cuatro columnas, y debajo
+     el formulario de pedido de imágenes, plegado. Para
      agregar una colección: copiá un <article class="tarjeta"> entero y guardá la
      foto (900 × 1600) en esta carpeta. Cada texto está dos veces: class="es" y class="en".
      ========================================================================== -->
@@ -144,7 +145,62 @@
 
 <div class="wrap">
 <main>
-  <section>
+  <!-- ========================================================== PEDIDO ===
+       Formulario de pedido de imágenes, plegado: se abre al tocar la pregunta.
+       Se abre solo si se llega con el enlace colecciones/#pedido (sitio.js, bloque 4).
+       Lo procesa Netlify Forms: activar "Form detection" una vez en el panel de
+       Netlify (Forms) y configurar ahí la notificación por email. -->
+  <section id="pedido">
+    <details class="desplegable">
+      <summary>
+        <span class="desplegable-titulo"><span class="es">¿Necesitás imágenes de un tema en particular?</span><span class="en">Need images on a particular subject?</span></span>
+        <span class="signo" aria-hidden="true"></span>
+      </summary>
+      <div class="desplegable-cuerpo">
+        <p class="es">Contanos qué buscás y para qué. Si tu organización cumple los requisitos y las imágenes están en el banco, te las mandamos. Si no están, lo tenemos en cuenta para las próximas expediciones.</p>
+        <p class="en">Tell us what you are looking for and what it is for. If your organisation meets the requirements and the images are in the bank, we will send them. If they are not, we will keep it in mind for upcoming expeditions.</p>
+
+      <form class="formulario" name="pedido-imagenes" method="POST" action="/mirada-natural/gracias/" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="pedido-imagenes">
+        <p class="oculto"><label>No completar: <input name="bot-field"></label></p>
+
+        <div class="campos">
+          <label>
+            <span class="es">Nombre y apellido</span><span class="en">Full name</span>
+            <input type="text" name="nombre" required autocomplete="name">
+          </label>
+          <label>
+            <span class="es">Organización</span><span class="en">Organisation</span>
+            <input type="text" name="organizacion" autocomplete="organization">
+          </label>
+          <label>
+            <span class="es">Correo electrónico</span><span class="en">Email</span>
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+          <label>
+            <span class="es">Para cuándo lo necesitás</span><span class="en">When do you need it</span>
+            <input type="text" name="plazo">
+          </label>
+          <label class="ancho">
+            <span class="es">Qué imágenes buscás (tema, especie, lugar)</span><span class="en">What images you need (subject, species, place)</span>
+            <textarea name="pedido" rows="4" required></textarea>
+          </label>
+          <label class="ancho">
+            <span class="es">Para qué las vas a usar</span><span class="en">What you will use them for</span>
+            <textarea name="uso" rows="3" required></textarea>
+          </label>
+        </div>
+
+        <div class="acciones">
+          <button type="submit" class="btn primario es">Enviar pedido</button>
+          <button type="submit" class="btn primario en">Send request</button>
+        </div>
+      </form>
+      </div>
+    </details>
+  </section>
+
+  <section class="volver">
     <p class="es"><a href="../">Volver a Mirada Natural</a></p>
     <p class="en"><a href="../">Back to Mirada Natural</a></p>
   </section>

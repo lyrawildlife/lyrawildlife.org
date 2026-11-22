@@ -460,6 +460,33 @@ html[data-lang="en"] .es{display:none !important}
   .grilla.cuatro .tarjeta-texto{left:12px;right:12px;bottom:12px}
 }
 
+/* ---- Desplegable (pedido de imágenes en la página de colecciones) ----------
+   Una línea con la pregunta y un círculo con "+"; al abrirse, el "+" pasa a "−"
+   y aparece el formulario. Sin JavaScript: <details> del navegador. ---------- */
+#pedido{padding:calc(var(--u)*5) 0 0;border-top:0}
+.desplegable{border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.desplegable summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:calc(var(--u)*3);
+  padding:calc(var(--u)*3) 0;color:var(--azul-profundo);
+}
+.desplegable summary::-webkit-details-marker{display:none}
+.desplegable-titulo{font-family:var(--serif);font-weight:400;font-size:clamp(22px,2.2vw,28px);line-height:1.25;letter-spacing:-.01em}
+.desplegable .signo{
+  position:relative;flex:0 0 auto;width:44px;height:44px;border-radius:999px;
+  border:1px solid var(--azul-profundo);color:var(--azul-profundo);transition:background .25s ease,color .25s ease;
+}
+.desplegable .signo::before,.desplegable .signo::after{
+  content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:currentColor;
+  transform:translate(-50%,-50%);transition:transform .25s ease;
+}
+.desplegable .signo::after{transform:translate(-50%,-50%) rotate(90deg)}
+.desplegable[open] .signo::after{transform:translate(-50%,-50%) rotate(0deg)}
+.desplegable summary:hover .signo{background:var(--azul-profundo);color:var(--perola)}
+.desplegable summary:focus-visible{outline:2px solid var(--azul);outline-offset:4px}
+.desplegable-cuerpo{padding:0 0 calc(var(--u)*5)}
+.desplegable-cuerpo > p:first-child{margin-top:0}
+section.volver{border-top:0;padding-top:calc(var(--u)*4)}
+
 /* ---- Formulario ---------------------------------------------------------- */
 .formulario{margin-top:calc(var(--u)*3)}
 .formulario .oculto{display:none}

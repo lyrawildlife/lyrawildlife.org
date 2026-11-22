@@ -68,3 +68,16 @@ var FORMULARIOS = {
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) abrir(false); });
 })();
+
+/* 4. Desplegables: se abren solos si se llega con un enlace que apunta a ellos
+      (por ejemplo, "pedir a medida" lleva a colecciones/#pedido). */
+(function () {
+  function abrir() {
+    if (!location.hash) return;
+    var el = document.getElementById(location.hash.slice(1));
+    var d = el && (el.tagName === 'DETAILS' ? el : el.querySelector('details'));
+    if (d) d.open = true;
+  }
+  abrir();
+  window.addEventListener('hashchange', abrir);
+})();
