@@ -2,7 +2,7 @@
 import asyncio, json, sys
 from playwright.async_api import async_playwright
 base='file:///tmp/claude-0/-home-claude/25f4945e-5af7-5d0f-b020-26be38a42525/scratchpad/sitio/'
-PAGES=['index.html','quienes-somos/index.html','programas/index.html','institucional/index.html','contacto/index.html','orca-explorer/index.html','mirada-natural/index.html','mirada-natural/colecciones/index.html','mirada-natural/gracias/index.html','mirada-natural/postulacion/index.html','mirada-natural/postulacion/gracias/index.html']
+PAGES=['index.html','institucional/index.html','orca-explorer/index.html','mirada-natural/index.html','mirada-natural/colecciones/index.html','mirada-natural/gracias/index.html','mirada-natural/postulacion/index.html','mirada-natural/postulacion/gracias/index.html']
 JS="""
 () => {
   const col = document.querySelector('.wrap').getBoundingClientRect();
