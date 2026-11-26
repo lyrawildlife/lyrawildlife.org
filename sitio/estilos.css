@@ -546,6 +546,8 @@ section.volver{border-top:0;padding-top:calc(var(--u)*4)}
 :root{--error:#B3261E}
 .formulario [hidden]{display:none !important}
 .formulario .req{color:var(--terracota);font-weight:500}
+.via-correo{margin-top:calc(var(--u)*6)}   /* correo visible debajo del formulario de contacto */
+.via-correo p{margin-bottom:calc(var(--u)*1)}
 .formulario .nota-obligatorios{margin:calc(var(--u)*2) 0 0;font-size:13px;color:var(--texto-terc)}
 .formulario .aviso-error{margin:calc(var(--u)*1.5) 0 0;font-size:14px;font-weight:500;color:var(--error)}
 .formulario.intentado input:invalid,.formulario.intentado textarea:invalid{border-color:var(--error);box-shadow:0 0 0 1px var(--error)}
