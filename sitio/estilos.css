@@ -545,6 +545,7 @@ section.volver{border-top:0;padding-top:calc(var(--u)*4)}
    faltantes, el marco de cada campo incompleto se pone rojo (sitio.js, bloque 6). */
 :root{--error:#B3261E}
 .formulario [hidden]{display:none !important}
+.formulario .opcional{color:var(--texto-terc)}
 .formulario .req{color:var(--terracota);font-weight:500}
 .via-correo{margin-top:calc(var(--u)*6)}   /* correo visible debajo del formulario de contacto */
 .via-correo p{margin-bottom:calc(var(--u)*1)}

@@ -318,7 +318,51 @@
     <h2 class="es">Nos encantaría saber de vos</h2>
     <h2 class="en">We would love to hear from you</h2>
 
-    <p><a class="mail" href="mailto:contacto@lyrawildlife.org">contacto@lyrawildlife.org</a></p>
+    <!-- Formulario de contacto de Mirada Natural (Netlify Forms, nombre "contacto-mirada-natural"; es el mismo
+         del inicio). El aviso llega a contacto@lyrawildlife.org con el asunto "Mirada Natural · Consulta de
+         <nombre>: <asunto>", y "Responder" va a quien escribió. -->
+    <form class="formulario" name="contacto-mirada-natural" method="POST" action="/gracias/" data-netlify="true" netlify-honeypot="bot-field" data-asunto="Mirada Natural · Consulta de {nombre}: {asunto}" novalidate>
+      <input type="hidden" name="form-name" value="contacto-mirada-natural">
+      <input type="hidden" name="subject" data-remove-prefix value="Mirada Natural · Consulta desde la web">
+      <p class="oculto"><label>No completar: <input name="bot-field"></label></p>
+
+      <div class="campos">
+        <label>
+          <span class="es">Nombre</span><span class="en">Name</span>
+          <input type="text" name="nombre" required autocomplete="name">
+        </label>
+        <label>
+          <span class="es">Correo electrónico</span><span class="en">Email</span>
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>
+          <span class="es">Organización <span class="opcional">(opcional)</span></span><span class="en">Organisation <span class="opcional">(optional)</span></span>
+          <input type="text" name="organizacion" autocomplete="organization">
+        </label>
+        <label>
+          <span class="es">Asunto <span class="opcional">(opcional)</span></span><span class="en">Subject <span class="opcional">(optional)</span></span>
+          <input type="text" name="asunto">
+        </label>
+        <label class="ancho">
+          <span class="es">Mensaje</span><span class="en">Message</span>
+          <textarea name="mensaje" rows="5" required></textarea>
+        </label>
+      </div>
+
+      <p class="aviso-error" role="alert" hidden><span class="es">Faltan datos: completá los campos marcados en rojo.</span><span class="en">Some details are missing: please complete the fields marked in red.</span></p>
+
+      <div class="acciones">
+        <button type="submit" class="btn primario es">Enviar mensaje</button>
+        <button type="submit" class="btn primario en">Send message</button>
+      </div>
+      <p class="pie-form"><span class="es">Usamos tus datos solo para responderte.</span><span class="en">We only use your details to reply to you.</span></p>
+    </form>
+
+    <div class="via-correo">
+      <p class="es">También podés escribirnos directamente a</p>
+      <p class="en">You can also write to us directly at</p>
+      <p><a class="mail" href="mailto:contacto@lyrawildlife.org">contacto@lyrawildlife.org</a></p>
+    </div>
   </section>
 
 </main>

@@ -99,7 +99,8 @@ var FORMULARIOS = {
         }
         return '';
       });
-      campo.value = asunto.replace(/\s+/g, ' ').trim();
+      // Si un campo opcional quedó vacío, se borra el separador que queda colgando al final (": ", " · ").
+      campo.value = asunto.replace(/\s+/g, ' ').trim().replace(/[\s:·|-]+$/, '');
     });
   });
 })();
