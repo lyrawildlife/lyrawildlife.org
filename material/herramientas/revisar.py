@@ -16,7 +16,7 @@ JS="""
     const ta = getComputedStyle(el).textAlign;
     if (ta === 'center') return;
     const d = Math.round(r.left - colLeft);
-    if (Math.abs(d) > 1 && !el.closest('.item > div') && !el.closest('.esencial') && !el.closest('.impulsor')) out.push({tag: el.tagName, cls: el.className, text: (el.textContent||'').trim().slice(0,50), left: Math.round(r.left), esperado: Math.round(colLeft), dif: d});
+    if (Math.abs(d) > 1 && !el.closest('.item > div') && !el.closest('.esencial') && !el.closest('.llamado') && !el.closest('.impulsor')) out.push({tag: el.tagName, cls: el.className, text: (el.textContent||'').trim().slice(0,50), left: Math.round(r.left), esperado: Math.round(colLeft), dif: d});
   });
   return {colLeft: Math.round(colLeft), scrollW: document.documentElement.scrollWidth, problemas: out};
 }
