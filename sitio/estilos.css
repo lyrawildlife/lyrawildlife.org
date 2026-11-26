@@ -227,9 +227,6 @@ section:first-of-type{border-top:0}
 }
 .figure img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 
-/* ---- Frase de cierre (Quiénes somos): mismo formato que el texto, separada de la lista */
-.cierre{margin-top:calc(var(--u)*4)}
-
 /* ---- Listas de trabajo --------------------------------------------------- */
 .stack{display:grid;gap:calc(var(--u)*4);margin-top:calc(var(--u)*4)}
 .item{display:grid;grid-template-columns:auto 1fr;gap:calc(var(--u)*3);align-items:start}
